@@ -1,21 +1,132 @@
-<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Olivia Watson | Portfolio</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Olivia Watson — product designer working across scientific applications, accessible interfaces, and visual storytelling.">
+  <title>Olivia Watson · Product Designer</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 80px auto;
-      padding: 0 24px;
-      color: #222;
-      background: #fafafa;
-      line-height: 1.6;
-    }
+    /* EDIT COLORS HERE. Everything is included in this one file. */
+    #olivia-portfolio { --paper:#f8f7f3; --ink:#242c2a; --muted:#42566b; --line:#d9ddd6; --accent:#245b4b; background:var(--paper); color:var(--ink); font:16px/1.65 Arial,Helvetica,sans-serif; }
+    #olivia-portfolio * { box-sizing:border-box }
+    #olivia-portfolio :where(h1,h2,h3,h4,p,strong,small,span,li,summary) { color:var(--ink) }
+    body { margin:0 }
+    #olivia-portfolio a { color:inherit; text-underline-offset:5px }
+    #olivia-portfolio a:hover { color:var(--accent) }
+    #olivia-portfolio :focus-visible { outline:3px solid var(--accent); outline-offset:5px }
+    #olivia-portfolio .skip { position:absolute; left:20px; top:-100px; padding:12px; background:var(--paper); z-index:10 }
+    #olivia-portfolio .skip:focus { top:10px }
+    #olivia-portfolio .wrap { max-width:1120px; margin:auto; padding:0 42px }
+    #olivia-portfolio header { display:flex; justify-content:space-between; align-items:center; padding:30px 0; gap:24px; border-bottom:1px solid var(--line) }
+    #olivia-portfolio .wordmark { font-size:18px; text-decoration:none; letter-spacing:-.5px; font-weight:600 }
+    #olivia-portfolio nav { display:flex; flex-wrap:wrap; gap:4px; background:#eeefe9; padding:4px; border-radius:40px }
+    #olivia-portfolio nav a { padding:7px 15px; text-decoration:none; font-size:14px; border-radius:30px }
+    #olivia-portfolio nav a:hover { background:var(--paper) }
+    #olivia-portfolio .eyebrow { font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:var(--muted); margin:0 0 22px }
+    #olivia-portfolio .hero { padding:96px 0 80px }
+    #olivia-portfolio h1 { font:400 clamp(42px,6.4vw,78px)/1.08 Georgia,'Times New Roman',serif; letter-spacing:-2.6px; max-width:900px; margin:0 0 34px }
+    #olivia-portfolio h1 em { color:var(--accent); font-weight:400 }
+    #olivia-portfolio .hero-bottom { display:flex; justify-content:space-between; align-items:flex-end; gap:30px }
+    #olivia-portfolio .intro { color:var(--muted); max-width:540px; font-size:18px; margin:0 }
+    #olivia-portfolio .button { display:inline-block; background:var(--ink); color:var(--paper); padding:13px 23px; border-radius:30px; text-decoration:none; white-space:nowrap }
+    #olivia-portfolio .button:hover { color:var(--paper); background:var(--accent) }
+    #olivia-portfolio section { scroll-margin-top:30px }
+    #olivia-portfolio .section-heading { display:flex; justify-content:space-between; align-items:baseline; border-top:1px solid var(--line); padding-top:25px; gap:15px; margin-bottom:35px }
+    #olivia-portfolio h2 { font:400 35px/1.2 Georgia,serif; letter-spacing:-1px; margin:0 }
+    #olivia-portfolio .section-heading span { font-size:12px; color:var(--muted) }
+    #olivia-portfolio article { margin-bottom:62px }
+    #olivia-portfolio .image-slot { min-height:310px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:35px; border-radius:16px; text-align:center; background:#e5ece7; position:relative; overflow:hidden }
+    #olivia-portfolio .image-slot::before { content:""; position:absolute; width:290px; height:290px; border-radius:50%; border:1px solid #b2c7bc; transform:translate(-60px,-20px) }
+    #olivia-portfolio .image-slot::after { content:""; position:absolute; width:380px; height:380px; border-radius:50%; border:1px solid #b2c7bc; transform:translate(50px,25px) }
+    #olivia-portfolio .image-slot strong { font:400 clamp(28px,4vw,48px)/1.15 Georgia,serif; position:relative; z-index:1; max-width:650px }
+    #olivia-portfolio .image-slot small { margin-top:24px; font-size:12px; color:var(--muted); position:relative; z-index:1; background:inherit; padding:4px 12px }
+    #olivia-portfolio .sand { background:#eee8dc }
+    #olivia-portfolio .sand::before,#olivia-portfolio .sand::after { border-color:#d4c6ac }
+    #olivia-portfolio .lavender { background:#e9e7ef }
+    #olivia-portfolio .lavender::before,#olivia-portfolio .lavender::after { border-color:#c9c3d8 }
+    #olivia-portfolio .project-image { width:100%; height:auto; display:block; border-radius:16px }
+    #olivia-portfolio .project-info { display:grid; grid-template-columns:1fr 1.1fr; gap:45px; padding-top:25px }
+    #olivia-portfolio .tags { font-size:12px; color:var(--muted); margin:0 0 8px }
+    #olivia-portfolio h3 { font:400 27px/1.25 Georgia,serif; margin:0 0 10px; letter-spacing:-.5px }
+    #olivia-portfolio p { margin:0 0 16px }
+    #olivia-portfolio .project-info p { color:var(--muted) }
+    #olivia-portfolio details { margin-top:14px; border-top:1px solid var(--line); padding-top:12px }
+    #olivia-portfolio summary { cursor:pointer; color:var(--ink); width:fit-content; padding:3px 0; min-height:35px }
+    #olivia-portfolio .case-body { padding:18px 0 0; max-width:720px }
+    #olivia-portfolio .case-body h4 { margin:16px 0 6px; font-size:14px }
+    #olivia-portfolio .case-body p { font-size:15px }
+    #olivia-portfolio .link { display:inline-block; margin-top:5px }
+    #olivia-portfolio .process { padding-bottom:70px }
+    #olivia-portfolio .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:24px }
+    #olivia-portfolio .step-num { color:var(--accent); display:block; font-size:12px; margin-bottom:25px }
+    #olivia-portfolio .steps h3 { font-size:24px }
+    #olivia-portfolio .steps p { color:var(--muted); font-size:15px }
+    #olivia-portfolio .about { padding-bottom:70px }
+    #olivia-portfolio .about-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:80px }
+    #olivia-portfolio .about-copy { font-size:20px; line-height:1.6 }
+    #olivia-portfolio .about-copy p+p { font-size:16px; color:var(--muted) }
+    #olivia-portfolio .experience { margin:0; padding:0; list-style:none }
+    #olivia-portfolio .experience li { padding:0 0 19px; margin-bottom:19px; border-bottom:1px solid var(--line) }
+    #olivia-portfolio .experience strong { display:block; font-size:15px; font-weight:600 }
+    #olivia-portfolio .experience span { font-size:14px; color:var(--muted) }
+    #olivia-portfolio .contact { padding:40px 0 65px; border-top:1px solid var(--line) }
+    #olivia-portfolio .contact h2 { font-size:clamp(36px,5vw,56px); margin:0 0 20px }
+    #olivia-portfolio .contact p { color:var(--muted) }
+    #olivia-portfolio footer { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; padding:22px 0; border-top:1px solid var(--line); color:var(--muted); font-size:12px }
+    @media(max-width:700px) { #olivia-portfolio .wrap { padding:0 22px } #olivia-portfolio header { align-items:flex-start; flex-direction:column; gap:15px } #olivia-portfolio .hero { padding:55px 0 } #olivia-portfolio h1 { letter-spacing:-1.4px } #olivia-portfolio .hero-bottom { display:block } #olivia-portfolio .button { margin-top:24px } #olivia-portfolio .project-info,#olivia-portfolio .about-grid { grid-template-columns:1fr; gap:15px } #olivia-portfolio .steps { grid-template-columns:1fr 1fr } #olivia-portfolio .image-slot { min-height:230px } #olivia-portfolio .section-heading { flex-wrap:wrap } }
+    @media(max-width:380px) { #olivia-portfolio .steps { grid-template-columns:1fr } #olivia-portfolio nav a { padding:8px 11px } }
+    @media(prefers-reduced-motion:no-preference) { html { scroll-behavior:smooth } }
   </style>
 </head>
 <body>
-  <h1>Olivia Watson</h1>
-  <p>Product Designer · UI/UX</p>
-  <p>My portfolio is coming soon.</p>
+<div id="olivia-portfolio">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <a class="wordmark" href="#main">Olivia Watson<span style="color:var(--accent)">.</span></a>
+      <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="intro-title">
+        <p class="eyebrow">Product design · UI/UX · Visual storytelling</p>
+        <h1 id="intro-title">Complex information.<br><em>Clear, thoughtful design.</em></h1>
+        <div class="hero-bottom"><p class="intro">I’m Olivia, a product designer with a background in software development and art. I design accessible interfaces that help people make sense of scientific data.</p><a class="button" href="#work">Explore my work ↗</a></div>
+      </section>
+      <section id="work" aria-labelledby="work-title">
+        <div class="section-heading"><h2 id="work-title">Selected work</h2><span>Scientific applications & creative practice</span></div>
+        <article>
+          <!-- Replace this entire image-slot div with: <img class="project-image" src="images/nwps.jpg" alt="Describe your actual NWPS screenshot"> -->
+          <div class="image-slot"><strong>National Water<br>Prediction Service</strong><small>Image placeholder · add your project screenshot</small></div>
+          <div class="project-info">
+            <div><p class="tags">NOAA · Scientific applications · UI/UX</p><h3>Making water data easier to navigate.</h3></div>
+            <div><p>Accessible interfaces for public-facing and internal scientific applications. My work connects stakeholder requirements, hydrologic information, and the people using it.</p>
+              <details><summary>My role & approach ↗</summary><div class="case-body"><h4>My role</h4><p>Sole and lead UI/UX designer supporting NOAA’s NWPS, collaborating with stakeholders, hydrologists, and developers.</p><h4>How I work</h4><p>Define requirements and acceptance criteria, explore layouts, develop mockups and prototypes, and support implementation through design handoff and QA.</p><h4>Accessibility</h4><p>Review visual contrast, accessible labeling, and keyboard interaction alongside the practical constraints of government applications.</p><h4>Project walkthrough</h4><p>Explore the existing presentation for additional context and prototype material.</p><a class="link" href="https://www.figma.com/proto/bs4aXM9krkE6pqP7PLMpXH/Portfolio?node-id=2-196&scaling=min-zoom&starting-point-node-id=2%3A196&page-id=1%3A4" target="_blank" rel="noopener noreferrer">Open Figma portfolio ↗</a><!-- Replace with the specific project prototype link once available. --></div></details>
+            </div>
+          </div>
+        </article>
+        <article>
+          <!-- Replace this image-slot div with your hydrologic software screenshot. -->
+          <div class="image-slot sand"><strong>Hydrologic software<br>& data visualization</strong><small>Image placeholder · add your interface or graph</small></div>
+          <div class="project-info"><div><p class="tags">Oil & gas SaaS · Front-end development · Data visualization</p><h3>Turning technical data into usable interfaces.</h3></div><div><p>Responsive interfaces and scientifically accurate interactive graphs that make hydrologic information easier for field technicians to understand and use.</p><details><summary>My role & approach ↗</summary><div class="case-body"><h4>Design & development</h4><p>Developed front-end interfaces using HTML, CSS, and JavaScript while contributing to modernization planning for existing applications.</p><h4>Information design</h4><p>Applied visual hierarchy, contrast, and information architecture to improve the readability of technical applications, with accessibility research and testing informing design decisions.</p><!-- Add your specific project screenshots, problem statement, and verified outcomes here. --></div></details></div></div>
+        </article>
+        <article>
+          <!-- Replace this image-slot div with a collage of your own artwork. -->
+          <div class="image-slot lavender"><strong>A creative practice,<br>beyond the interface.</strong><small>Image placeholder · add your artwork</small></div>
+          <div class="project-info"><div><p class="tags">Freelance · Illustration · Graphic design</p><h3>Art & visual storytelling.</h3></div><div><p>Freelance creative work since 2017, spanning portraits, graphic illustrations, and mixed-media pieces. A practice in composition, color, and looking closely.</p><details><summary>More about my practice ↗</summary><div class="case-body"><p>I work across ink, marker, watercolor, gouache, and collage. My creative work informs the attention to hierarchy and visual communication I bring to product design.</p><!-- Add selected pieces and links here. --></div></details></div></div>
+        </article>
+      </section>
+      <section class="process" id="process" aria-labelledby="process-title">
+        <div class="section-heading"><h2 id="process-title">Understand first. Then design.</h2><span>My process</span></div>
+        <div class="steps"><div><span class="step-num">01 / DISCOVER</span><h3>Define the need.</h3><p>Meet with stakeholders and key users. Clarify the problem, acceptance criteria, and MVP before exploring solutions.</p></div><div><span class="step-num">02 / STRUCTURE</span><h3>Find the shape.</h3><p>Wireframe the information and interactions, considering accessibility, responsiveness, and future growth.</p></div><div><span class="step-num">03 / DESIGN</span><h3>Make it tangible.</h3><p>Develop mockups that make ideas concrete and give stakeholders something specific to respond to. Iterate together.</p></div><div><span class="step-num">04 / REFINE</span><h3>Connect the details.</h3><p>Prototype interactions, review with developers, document the work, and support QA through implementation.</p></div></div>
+      </section>
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="section-heading"><h2 id="about-title">A little about me</h2><span>Design, development & art</span></div>
+        <div class="about-grid"><div class="about-copy"><p>I’m interested in the space between complex systems and the people who need to use them.</p><p>My background combines UI/UX design, front-end development, and a longstanding creative practice. I’m comfortable discussing scientific requirements with stakeholders, exploring ideas in Figma, and working with developers to bring approved designs to life.</p><p>I care about thoughtful visual hierarchy, accessible interactions, and understanding the problem before committing to a solution.</p></div><ul class="experience"><li><strong>Product design for scientific applications</strong><span>Requirements · Mockups · Prototypes · Design handoff</span></li><li><strong>Front-end development background</strong><span>HTML · CSS · JavaScript · Hydrologic data visualization</span></li><li><strong>Accessibility & quality</strong><span>Section 508 / WCAG auditing · Manual checks · QA/QC</span></li><li><strong>Creative tools & practice</strong><span>Figma · Photoshop · Illustrator · Traditional media</span></li></ul></div>
+      </section>
+      <section class="contact" id="contact" aria-labelledby="contact-title"><p class="eyebrow">Let’s connect</p><h2 id="contact-title">Good work starts<br>with a conversation.</h2><p>Contact details coming soon.</p><!-- Replace the paragraph above with your email and LinkedIn links, for example: <a class="button" href="mailto:YOUR-EMAIL">Email me ↗</a> --></section>
+    </main>
+    <footer><span>© 2026 Olivia Watson</span><a href="#main">Back to top ↑</a></footer>
+  </div>
+</div>
 </body>
 </html>
