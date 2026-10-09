@@ -76,7 +76,7 @@ h1 em{font-style:normal;background:linear-gradient(95deg,var(--mint),var(--sand)
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,200px));gap:16px}
 .stat{padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:rgba(0,18,25,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .stat b{display:block;font:700 34px/1 var(--display);letter-spacing:-.03em;color:var(--sand);margin-bottom:6px}
-.stat span{font-size:13px;color:var(--muted);line-height:1.35;display:block}
+.stat span{font-size:20px;color:var(--muted);line-height:1.35;display:block}
 
 /* marquee */
 .marquee{border-bottom:1px solid var(--line);overflow:hidden;background:var(--panel);padding:16px 0}
@@ -434,11 +434,11 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:
    ================================================================ */
 const work = [
   {
-    title: 'NOAA OWP',
+    title: 'NOAA NWPS',
     tags: ['Figma', 'Design systems', 'WCAG 2.1 AA', 'Responsive'],
-    text: 'Sole and lead UI/UX designer supporting NOAA’s National Water Prediction Service. I design accessible interfaces for public-facing and internal scientific applications, from wireframes to interactive prototypes, and partner with developers through Agile implementation and QA/QC.',
+    text: 'Sole and lead UI/UX designer supporting NOAA’s National Water Prediction Service (NWPS). I design accessible interfaces for public-facing and internal scientific applications, from wireframes to interactive prototypes, and partner with developers through Agile implementation and QA/QC.',
     tone: 'sea',
-    prototype: '',
+    prototype: 'https://water.noaa.gov/',
     images: [
      { src: 'nwpshome.png', alt: 'NWPS Home', caption: 'NWPS Home page, showing the main interactive map when you first load the page' },
      { src: 'nwpssidepanel.png', alt: 'NWPS Side Panel', caption: 'NWPS Home page, showing the main interactive map and Official Hydrograph gauge information side panel for a selected gauge' },
@@ -458,7 +458,7 @@ const work = [
     tags: ['Data visualization', 'Interactive charts', 'Controls'],
     text: 'Lead UI/UX design for NOAA Atlas 15 web capabilities, translating complex precipitation-frequency data and scientific requirements into interactive charts, controls, and understandable user experiences.',
     tone: 'ochre',
-    prototype: '',
+    prototype: 'https://www.figma.com/proto/4VCzg4ZmFAYOCmNzFjbqBI/Atlas-15?node-id=3633-9072&viewport=-207%2C136%2C0.06&t=ZvrWDGee8GqgYbuT-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3633%3A9072&page-id=3511%3A29050',
     images: [
      { src: 'a15final.png', alt: 'Final oCONUS update prototype', caption: 'Final oCONUS update prototype for Atlas 15 stakeholder review; fully approved and in development' },
      { src: 'a15prototype.png', alt: 'Midway prototype screenshot of Atlas 15 for Pilot release', caption: 'Midway prototype screenshot of Atlas 15 for Pilot release' },
@@ -477,7 +477,7 @@ const work = [
     tags: ['Case study', 'Coming soon'],
     text: 'Add your Rivers-at-a-glance overview here: who it serves, the challenge, and the key design decisions behind your solution.',
     tone: 'sea',
-    prototype: '',
+    prototype: 'https://www.figma.com/proto/eWlvNkgThcf9k7UesEhehI/Rivers-at-a-glance?page-id=233%3A8767&node-id=329-34161&viewport=-4096%2C589%2C0.11&t=As9o15Qv3gcDc4SH-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=329%3A34161',
     images: [
      { src: 'raagfinalcropped.png', alt: 'The RaaG final generation, cropped', caption: 'The Rivers-at-a-glance final generation prototype, cropped' },
      { src: 'raag2.png', alt: 'The Rivers-at-a-glance pre-generation, post-selection prototype view', caption: 'The Rivers-at-a-glance pre-generation, post-selection prototype view' },
@@ -491,13 +491,12 @@ const work = [
     tags: ['Explorations', 'Prototypes'],
     text: 'A place for additional interface work, prototypes, and smaller design explorations.',
     tone: 'sand',
-    prototype: '',
     images: [
-     { src: 'verishistory.gif', alt: 'gif test 1', caption: 'gif test 1' },
-     { src: 'verisresponsive.gif', alt: 'gif test 2', caption: 'gif test 2' },
-     { src: 'verisedit.gif', alt: 'gif test 3', caption: 'gif test 3' },
-     { src: 'verissavebug.gif', alt: 'gif test 4', caption: 'gif test 4' },
-     { src: 'verisscrollfix.gif', alt: 'gif test 5', caption: 'gif test 5' },
+     { src: 'verishistory.gif', alt: 'Software development work example', caption: 'Software development work example of a Change History update I did for Veris Global' },
+     { src: 'verisresponsive.gif', alt: 'Software development work example', caption: 'Software development work example of a responsive page break update I did for Veris Global' },
+     { src: 'verisedit.gif', alt: 'Software development work example', caption: 'Software development work example of an editing and calendar addition update I did for Veris Global' },
+     { src: 'verissavebug.gif', alt: 'Software development work example', caption: 'Example of a software bug report for Veris Global' },
+     { src: 'verisscrollfix.gif', alt: 'Software development work example', caption: 'Software development work example of a modal update I did for Veris Global, adding a scroll bar and adding responsive height cap' },
      { src: 'spotify1.png', alt: 'Spotify social media update mock-up', caption: 'Spotify social media update mock-up, done before they actually added a version of this' },
      { src: 'spotify2.png', alt: 'Spotify social media update mock-up', caption: 'Spotify social media update mock-up, done before they actually added a version of this' },
      { src: 'spotify3.png', alt: 'Spotify social media update mock-up', caption: 'Spotify social media update mock-up, done before they actually added a version of this' },
@@ -562,10 +561,10 @@ const play = [
     tone: 'ochre',
     images: [
      { src: 'zine.png', alt: 'Zine of portraits and typography', caption: 'Zine of portraits and typography examples' },
-     { src: 'hotweencover.tiff', alt: 'Cover of coloring book', caption: 'Cover of coloring book made in collaboration with Cody Meets World Studio, entirely illustrated by me without the use of AI' },
-     { src: 'hotweenback.tiff', alt: 'Back of coloring book', caption: 'Back of coloring book made in collaboration with Cody Meets World Studio, entirely illustrated by me without the use of AI' },
-     { src: 'howlcover.tiff', alt: 'Cover of coloring book', caption: 'Cover of coloring book made in collaboration with Cody Meets World Studio, entirely illustrated by me without the use of AI' },
-     { src: 'howlback.tiff', alt: 'Back of coloring book', caption: 'Back of coloring book made in collaboration with Cody Meets World Studio, entirely illustrated by me without the use of AI' },
+     { src: 'hotweencover.png', alt: 'Cover of coloring book', caption: 'Cover of coloring book made in collaboration with Cody Meets World Studio, entirely illustrated by me without the use of AI' },
+     { src: 'hotweenback.png', alt: 'Back of coloring book', caption: 'Back of coloring book made in collaboration with Cody Meets World Studio, entirely illustrated by me without the use of AI' },
+     { src: 'howlcover.png', alt: 'Cover of coloring book', caption: 'Cover of coloring book made in collaboration with Cody Meets World Studio, entirely illustrated by me without the use of AI' },
+     { src: 'howlback.png', alt: 'Back of coloring book', caption: 'Back of coloring book made in collaboration with Cody Meets World Studio, entirely illustrated by me without the use of AI' },
      { src: 'wrestling.mp4', alt: 'Stop-motion animation of wrestler and cat', caption: 'College stop-motion animation utilizing experience with traditional puppetmaking and Adobe After Effects. Displayed in the Lafayette Art Museum Wrestlng Exhibition' },
     ]
   }
@@ -824,7 +823,7 @@ if (portrait) {
 
 /* ---------- MARQUEE ---------- */
 (() => {
-  const words = ['UI/UX Design', 'Figma', 'WCAG 2.1 AA', 'Design Systems', 'Data Visualization', 'Chart.js', 'Svelte', 'TypeScript', 'Interactive Maps', 'Responsive Design', 'Usability Testing'];
+  const words = ['UI/UX Design', 'Figma', 'WCAG 2.1 AA', 'Design Systems', 'Data Visualization', 'HTML/CSS', 'TypeScript', 'Interactive Maps', 'Responsive Design', 'Usability Testing'];
   const track = document.getElementById('marquee');
   [false, true].forEach(hidden => {
     const g = el('div', 'marquee-group');
