@@ -1,1842 +1,931 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Olivia Watson — product designer and artist in Denver, Colorado.">
-  <title>Olivia Watson · Design & Art</title>
-
-  <!-- ============================================================
-       1. CSS / VISUAL DESIGN
-       Colors, typography, layouts, navigation, and decorations.
-       Keep this inside the style tags. No extra CSS file is needed.
-       ============================================================ -->
-  <style>
-#olivia-portfolio {
-  --cream: #f4e8cd;
-  --ink: #001219;
-  --blue: #005f73;
-  --teal: #0a9396;
-  --mint: #94d2bd;
-  --sand: #e9d8a6;
-  --gold: #ee9b00;
-  --orange: #ca6702;
-  --rust: #bb3e03;
-  --red: #ae2012;
-  --wine: #9b2226;
-  --muted: #42566b;
-  background: var(--cream);
-  color: var(--ink);
-  font: 16px/1.65 Arial,Helvetica,sans-serif;
-  overflow: hidden;
-  isolation:isolate
-}
-
-body {
-  margin:0
-}
-
-#olivia-portfolio * {
-  box-sizing:border-box
-}
-
-#olivia-portfolio :where(h1,h2,h3,h4,p,span,strong,small,li) {
-  color:var(--ink)
-}
-
-#olivia-portfolio a {
-  color: inherit;
-  text-underline-offset:5px
-}
-
-#olivia-portfolio a:hover {
-  color:var(--blue)
-}
-
-#olivia-portfolio :focus-visible {
-  outline: 3px solid var(--blue);
-  outline-offset:5px
-}
-
-#olivia-portfolio button {
-  font: inherit;
-  cursor:pointer
-}
-
-#olivia-portfolio .wrap {
-  max-width: 1160px;
-  padding: 0 46px;
-  margin: auto;
-  position:relative
-}
-
-#olivia-portfolio .skip {
-  position: absolute;
-  top: -100px;
-  left: 20px;
-  z-index: 20;
-  background: var(--cream);
-  padding:12px
-}
-
-#olivia-portfolio .skip:focus {
-  top:12px
-}
-
-#olivia-portfolio header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 30px 0;
-  border-bottom: 1px solid #005f732b;
-  position: relative;
-  z-index:2
-}
-
-#olivia-portfolio .wordmark {
-  font-weight: 600;
-  font-size: 20px;
-  text-decoration: none;
-  letter-spacing:-.6px
-}
-
-#olivia-portfolio .wordmark span {
-  color:var(--rust)
-}
-
-#olivia-portfolio nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3px;
-  padding: 4px;
-  background: #e9d8a655;
-  border-radius:40px
-}
-
-#olivia-portfolio nav a {
-  font-size: 14px;
-  padding: 9px 16px;
-  text-decoration: none;
-  border-radius:25px
-}
-
-#olivia-portfolio nav a:hover {
-  background:var(--sand)
-}
-
-#olivia-portfolio .hero {
-  position: relative;
-  padding:95px 0 86px
-}
-
-#olivia-portfolio .eyebrow {
-  font-size: 12px;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: var(--blue);
-  margin:0 0 24px
-}
-
-#olivia-portfolio h1 {
-  font: 400 clamp(43px,6.4vw,78px)/1.08 Georgia,serif;
-  letter-spacing: -2.6px;
-  margin: 0 0 32px;
-  max-width: 850px;
-  position: relative;
-  z-index:1
-}
-
-#olivia-portfolio h1 em {
-  color: var(--blue);
-  font-weight:400
-}
-
-#olivia-portfolio .hero-bottom {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 40px;
-  position: relative;
-  z-index:1
-}
-
-#olivia-portfolio .intro {
-  font-size: 18px;
-  max-width: 560px;
-  color: var(--muted);
-  margin:0
-}
-
-#olivia-portfolio .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 12px 22px;
-  border-radius: 30px;
-  background: var(--blue);
-  color: var(--cream);
-  text-decoration: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  font-size: 14px;
-  min-height:46px
-}
-
-#olivia-portfolio .button:hover {
-  background: var(--ink);
-  color:var(--cream)
-}
-
-#olivia-portfolio .button.warm {
-  background:var(--wine)
-}
-
-#olivia-portfolio .button.warm:hover {
-  background:var(--red)
-}
-
-#olivia-portfolio .button:disabled {
-  cursor: default;
-  background: transparent;
-  color: var(--muted);
-  border: 1px dashed #42566b80;
-  white-space:normal
-}
-
-#olivia-portfolio .hero-art {
-  position: absolute;
-  right: -145px;
-  top: 20px;
-  width: 350px;
-  height: 350px;
-  border: 34px solid var(--sand);
-  border-radius: 50%;
-  opacity: .55;
-  pointer-events: none;
-  transform: rotate(-18deg);
-  z-index:0
-}
-
-#olivia-portfolio .hero-art:before {
-  content: "";
-  position: absolute;
-  inset: 20px;
-  border: 2px solid var(--teal);
-  border-radius:50%
-}
-
-#olivia-portfolio .hero-art:after {
-  content: "";
-  position: absolute;
-  right: 15px;
-  top: -40px;
-  width: 88px;
-  height: 88px;
-  background: var(--gold);
-  border-radius:50%
-}
-
-#olivia-portfolio .section {
-  position: relative;
-  padding: 35px 0 55px;
-  scroll-margin-top:25px
-}
-
-#olivia-portfolio .section-heading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 25px;
-  padding-top: 26px;
-  border-top: 1px solid #005f7333;
-  margin-bottom: 44px;
-  position: relative;
-  z-index:1
-}
-
-#olivia-portfolio h2 {
-  font: 400 clamp(38px,5vw,55px)/1.1 Georgia,serif;
-  letter-spacing: -1.5px;
-  margin:0
-}
-
-#olivia-portfolio .section-heading p {
-  max-width: 410px;
-  color: var(--muted);
-  font-size: 15px;
-  margin:0
-}
-
-#olivia-portfolio .project {
-  display: grid;
-  grid-template-columns: 1.65fr 1fr;
-  gap: 38px;
-  align-items: center;
-  margin-bottom: 52px;
-  position: relative;
-  z-index:1
-}
-
-#olivia-portfolio .project:last-child {
-  margin-bottom:0
-}
-
-#olivia-portfolio .project-info {
-  padding:15px 0
-}
-
-#olivia-portfolio .number {
-  font-size: 12px;
-  color: var(--blue);
-  letter-spacing: 1px;
-  display: block;
-  margin-bottom:16px
-}
-
-#olivia-portfolio h3 {
-  font: 400 32px/1.15 Georgia,serif;
-  letter-spacing: -.6px;
-  margin:0 0 17px
-}
-
-#olivia-portfolio .project-info p {
-  color: var(--muted);
-  margin: 0 0 22px;
-  font-size:15px
-}
-
-#olivia-portfolio .tags {
-  font-size: 12px!important;
-  color: var(--blue)!important;
-  letter-spacing:.3px
-}
-
-#olivia-portfolio .carousel {
-  min-width:0
-}
-
-#olivia-portfolio .slide-frame {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #e2e8dc;
-  aspect-ratio:16/10
-}
-
-#olivia-portfolio .slide {
-  height: 100%;
-  margin:0
-}
-
-#olivia-portfolio .slide[hidden] {
-  display:none
-}
-
-#olivia-portfolio .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  background:var(--cream)
-}
-
-#olivia-portfolio .placeholder {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 28px;
-  text-align: center;
-  overflow:hidden
-}
-
-#olivia-portfolio .placeholder:before {
-  content: "";
-  position: absolute;
-  width: 80%;
-  height: 150%;
-  border: 2px solid currentColor;
-  opacity: .13;
-  border-radius: 45%;
-  transform:rotate(35deg)
-}
-
-#olivia-portfolio .placeholder strong {
-  font: 400 clamp(25px,3vw,40px)/1.15 Georgia,serif;
-  position: relative;
-  max-width: 390px;
-  color:inherit
-}
-
-#olivia-portfolio .placeholder span {
-  font-size: 12px;
-  position: relative;
-  margin-top: 16px;
-  color:inherit
-}
-
-#olivia-portfolio .placeholder small {
-  font-size: 11px;
-  position: absolute;
-  bottom: 18px;
-  color: inherit;
-  letter-spacing: 1px;
-  text-transform:uppercase
-}
-
-#olivia-portfolio .tone-sea {
-  background: #94d2bd70;
-  color:var(--blue)
-}
-
-#olivia-portfolio .tone-sand {
-  background: #e9d8a699;
-  color:var(--blue)
-}
-
-#olivia-portfolio .tone-ochre {
-  background: #ee9b0033;
-  color:var(--ink)
-}
-
-#olivia-portfolio .tone-rust {
-  background: #bb3e0320;
-  color:var(--wine)
-}
-
-#olivia-portfolio .carousel-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  padding-top:13px
-}
-
-#olivia-portfolio .slide-count {
-  font-size: 12px;
-  color:var(--muted)
-}
-
-#olivia-portfolio .arrows {
-  display: flex;
-  gap:7px
-}
-
-#olivia-portfolio .arrow {
-  width: 44px;
-  height: 44px;
-  border: 1px solid #005f7344;
-  border-radius: 50%;
-  background: transparent;
-  color: var(--blue);
-  font-size: 19px;
-  line-height:1
-}
-
-#olivia-portfolio .arrow:hover {
-  background:var(--sand)
-}
-
-#olivia-portfolio .arrow:disabled {
-  opacity: .4;
-  cursor:default
-}
-
-#olivia-portfolio .work-art {
-  position: absolute;
-  left: -180px;
-  top: 47%;
-  width: 360px;
-  height: 430px;
-  border: 1px solid var(--teal);
-  border-radius: 50%;
-  opacity: .2;
-  transform: rotate(24deg);
-  pointer-events:none
-}
-
-#olivia-portfolio .work-art:before,#olivia-portfolio .work-art:after {
-  content: "";
-  position: absolute;
-  inset: 25px;
-  border: 1px solid var(--teal);
-  border-radius:50%
-}
-
-#olivia-portfolio .work-art:after {
-  inset:50px
-}
-
-#olivia-portfolio .play {
-  padding-top:48px
-}
-
-#olivia-portfolio .play .section-heading {
-  border-color:#9b222633
-}
-
-#olivia-portfolio .play .number {
-  color:var(--wine)
-}
-
-#olivia-portfolio .play-banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  margin-bottom: 43px;
-  padding: 24px 28px;
-  background: #e9d8a666;
-  border-radius: 12px;
-  position: relative;
-  z-index:1
-}
-
-#olivia-portfolio .play-banner p {
-  margin: 0;
-  color:var(--muted)
-}
-
-#olivia-portfolio .play-banner strong {
-  font: 400 27px Georgia,serif;
-  display: block;
-  color: var(--wine);
-  margin-bottom:5px
-}
-
-#olivia-portfolio .play-art {
-  position: absolute;
-  right: -150px;
-  top: 35%;
-  width: 310px;
-  height: 310px;
-  border: 38px solid var(--gold);
-  opacity: .12;
-  transform: rotate(20deg);
-  pointer-events:none
-}
-
-#olivia-portfolio .play-art:before {
-  content: "";
-  position: absolute;
-  inset: 25px;
-  border: 3px solid var(--rust);
-  transform:rotate(25deg)
-}
-
-#olivia-portfolio .about-grid {
-  display: grid;
-  grid-template-columns: .85fr 1.2fr;
-  gap: 60px;
-  align-items: center;
-  position: relative;
-  z-index:1
-}
-
-#olivia-portfolio .portrait {
-  aspect-ratio: 4/5;
-  background: #94d2bd50;
-  border-radius: 120px 120px 12px 12px;
-  overflow:hidden
-}
-
-#olivia-portfolio .portrait img {
-  width: 100%;
-  height: 100%;
-  object-fit:cover
-}
-
-#olivia-portfolio .portrait .placeholder {
-  color:var(--blue)
-}
-
-#olivia-portfolio .about-copy h3 {
-  font-size:36px
-}
-
-#olivia-portfolio .about-copy p {
-  color: var(--muted);
-  margin:0 0 20px
-}
-
-#olivia-portfolio .location {
-  color: var(--blue)!important;
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform:uppercase
-}
-
-#olivia-portfolio .contact {
-  position: relative;
-  padding: 65px 0 75px;
-  border-top: 1px solid #005f7333;
-  margin-top:30px
-}
-
-#olivia-portfolio .contact h2 {
-  max-width: 650px;
-  margin-bottom:28px
-}
-
-#olivia-portfolio .contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px 35px;
-  font-size: 18px;
-  position: relative;
-  z-index:1
-}
-
-#olivia-portfolio .contact-links a {
-  overflow-wrap: anywhere;
-  color:var(--blue)
-}
-
-#olivia-portfolio .contact-art {
-  position: absolute;
-  width: 220px;
-  height: 110px;
-  background: var(--mint);
-  border-radius: 220px 220px 0 0;
-  right: -50px;
-  bottom: 0;
-  opacity: .6;
-  pointer-events:none
-}
-
-#olivia-portfolio footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  border-top: 1px solid #005f7333;
-  padding: 23px 0;
-  font-size: 12px;
-  color:var(--muted)
-}
-
-#olivia-portfolio footer span {
-  color:var(--muted)
-}
-
-@media(max-width:760px) {
-  #olivia-portfolio .wrap {
-    padding:0 23px
-  }
-  #olivia-portfolio header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap:15px
-  }
-  #olivia-portfolio nav a {
-    padding:9px 13px
-  }
-  #olivia-portfolio .hero {
-    padding:58px 0
-  }
-  #olivia-portfolio h1 {
-    letter-spacing:-1.5px
-  }
-  #olivia-portfolio .hero-bottom {
-    display:block
-  }
-  #olivia-portfolio .hero-bottom .button {
-    margin-top:25px
-  }
-  #olivia-portfolio .hero-art {
-    right: -200px;
-    opacity:.3
-  }
-  #olivia-portfolio .section-heading {
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom:30px
-  }
-  #olivia-portfolio .project {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    margin-bottom:40px
-  }
-  #olivia-portfolio .project-info {
-    padding-top:4px
-  }
-  #olivia-portfolio .about-grid {
-    grid-template-columns: 1fr;
-    gap:30px
-  }
-  #olivia-portfolio .portrait {
-    max-width: 360px;
-    width:100%
-  }
-  #olivia-portfolio .play-banner {
-    align-items: flex-start;
-    flex-direction: column;
-    padding:22px
-  }
-  #olivia-portfolio .contact-links {
-    font-size:16px
-  }
-  #olivia-portfolio .contact-art {
-    right:-130px
-  }
-  #olivia-portfolio .section {
-    padding-bottom:35px
-  }
-}
-
-@media(prefers-reduced-motion:no-preference) {
-  html {
-    scroll-behavior:smooth
-  }
-}
-
-/* Vibrant editorial layout */
-
-#olivia-portfolio {
-  font-family: Georgia,'Times New Roman',serif;
-  background: var(--cream);
-  color:var(--ink)
-}
-
-#olivia-portfolio :where(h1,h2,h3,h4) {
-  font-family: Arial,Helvetica,sans-serif;
-  font-weight: 800;
-  color:var(--ink)
-}
-
-#olivia-portfolio .wordmark,#olivia-portfolio nav,#olivia-portfolio .eyebrow,#olivia-portfolio .number,#olivia-portfolio .button,#olivia-portfolio .tags,#olivia-portfolio .slide-count,#olivia-portfolio .location {
-  font-family:Arial,Helvetica,sans-serif
-}
-
-#olivia-portfolio header {
-  border-bottom:2px solid var(--ink)
-}
-
-#olivia-portfolio nav {
-  background:var(--sand)
-}
-
-#olivia-portfolio nav a:nth-child(1):hover {
-  background:var(--mint)
-}
-
-#olivia-portfolio nav a:nth-child(2):hover {
-  background: var(--gold);
-  color:var(--ink)
-}
-
-#olivia-portfolio nav a:nth-child(3):hover {
-  background: var(--teal);
-  color:var(--ink)
-}
-
-#olivia-portfolio nav a:nth-child(4):hover {
-  background: var(--rust);
-  color:var(--cream)
-}
-
-#olivia-portfolio .hero {
-  padding: 80px 0 70px;
-  min-height:500px
-}
-
-#olivia-portfolio h1 {
-  font-family: Arial,Helvetica,sans-serif;
-  font-weight: 900;
-  font-size: clamp(44px,6.5vw,78px);
-  line-height: 1;
-  letter-spacing: -3.5px;
-  max-width:780px
-}
-
-#olivia-portfolio h1 em {
-  font-style: normal;
-  font-weight: 900;
-  color:var(--blue)
-}
-
-#olivia-portfolio .intro {
-  max-width: 570px;
-  font-size: 20px;
-  line-height:1.55
-}
-
-#olivia-portfolio .hero-art {
-  right: -95px;
-  top: 40px;
-  width: 260px;
-  height: 330px;
-  border: 0;
-  background: var(--teal);
-  border-radius: 140px 140px 0 0;
-  opacity: 1;
-  transform: rotate(12deg);
-  z-index:0
-}
-
-#olivia-portfolio .hero-art:before {
-  inset: auto;
-  left: 25px;
-  top: 25px;
-  width: 170px;
-  height: 245px;
-  border: 0;
-  background: var(--mint);
-  border-radius:100px 100px 0 0
-}
-
-#olivia-portfolio .hero-art:after {
-  right: 130px;
-  top: 235px;
-  width: 120px;
-  height: 120px;
-  background: var(--gold);
-  border: 14px solid var(--orange);
-  border-radius:50%
-}
-
-#olivia-portfolio .button {
-  border-radius: 8px;
-  font-weight: 700;
-  background: var(--blue);
-  box-shadow:4px 4px 0 var(--mint)
-}
-
-#olivia-portfolio .section-heading {
-  border: 0;
-  padding: 0;
-  margin-bottom:35px
-}
-
-#olivia-portfolio h2 {
-  font-weight: 900;
-  font-size: clamp(46px,7vw,75px);
-  letter-spacing:-3px
-}
-
-#olivia-portfolio h3 {
-  font-weight: 800;
-  letter-spacing: -1px;
-  font-size:30px
-}
-
-#olivia-portfolio .section-heading p {
-  font-size:18px
-}
-
-#olivia-portfolio .work {
-  padding-top:38px
-}
-
-#olivia-portfolio .work .section-heading h2 {
-  background: var(--blue);
-  color: var(--cream);
-  padding: 14px 24px;
-  transform:rotate(-3deg)
-}
-
-#olivia-portfolio #work-projects {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap:28px
-}
-
-#olivia-portfolio .work .project {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 8px;
-  margin: 0;
-  min-width:0
-}
-
-#olivia-portfolio .work .project:first-child {
-  grid-column: 1/-1;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  background: var(--mint);
-  padding: 26px;
-  border-radius: 3px 45px 3px 3px;
-  gap:30px
-}
-
-#olivia-portfolio .work .project:first-child .project-info p {
-  color:var(--ink)
-}
-
-#olivia-portfolio .work .project:first-child .button:disabled {
-  color: var(--ink);
-  border-color:var(--blue)
-}
-
-#olivia-portfolio .work .project:nth-child(2) {
-  background: var(--sand);
-  padding:22px
-}
-
-#olivia-portfolio .work .project:nth-child(3) {
-  background: var(--blue);
-  padding: 22px;
-  border-radius:30px 3px 3px 3px
-}
-
-#olivia-portfolio .work .project:nth-child(3) :is(h3,.project-info p,.number,.slide-count) {
-  color:var(--cream)!important
-}
-
-#olivia-portfolio .work .project:nth-child(3) .button:disabled {
-  color: var(--cream);
-  border-color:var(--mint)
-}
-
-#olivia-portfolio .work .project:nth-child(3) .arrow {
-  color: var(--cream);
-  border-color:var(--mint)
-}
-
-#olivia-portfolio .work .project:nth-child(3) .arrow:hover {
-  background:var(--ink)
-}
-
-#olivia-portfolio .work .project:last-child {
-  grid-column: 1/-1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 24px;
-  border-top: 8px solid var(--gold);
-  background: #e9d8a644;
-  gap:35px
-}
-
-#olivia-portfolio .project-info p {
-  font-size: 17px;
-  line-height:1.6
-}
-
-#olivia-portfolio .slide-frame {
-  border-radius: 3px;
-  background:var(--sand)
-}
-
-#olivia-portfolio .placeholder strong {
-  font-family: Arial,Helvetica,sans-serif;
-  font-weight: 800;
-  letter-spacing:-1px
-}
-
-#olivia-portfolio .placeholder:before {
-  border-width: 14px;
-  opacity:.18
-}
-
-#olivia-portfolio .tone-sea {
-  background: var(--teal);
-  color:var(--ink)
-}
-
-#olivia-portfolio .tone-sand {
-  background: var(--sand);
-  color:var(--blue)
-}
-
-#olivia-portfolio .tone-ochre {
-  background: var(--gold);
-  color:var(--ink)
-}
-
-#olivia-portfolio .tone-rust {
-  background: var(--rust);
-  color:var(--cream)
-}
-
-#olivia-portfolio .work-art {
-  opacity: .45;
-  border: 14px solid var(--teal);
-  left:-200px
-}
-
-#olivia-portfolio .play {
-  background: var(--gold);
-  margin: 65px -46px 50px;
-  padding: 45px 46px 50px;
-  border-radius:45px 0 45px 0
-}
-
-#olivia-portfolio .play .section-heading {
-  align-items:center
-}
-
-#olivia-portfolio .play .section-heading h2 {
-  color: var(--wine);
-  font-size: clamp(65px,10vw,110px);
-  transform:rotate(-5deg)
-}
-
-#olivia-portfolio .play .section-heading p {
-  color:var(--ink)
-}
-
-#olivia-portfolio .play-banner {
-  background: var(--wine);
-  border-radius: 3px;
-  padding: 25px 28px;
-  box-shadow:8px 8px 0 var(--orange)
-}
-
-#olivia-portfolio .play-banner p,#olivia-portfolio .play-banner strong {
-  color:var(--cream)
-}
-
-#olivia-portfolio .play-banner strong {
-  font-family: Arial,Helvetica,sans-serif;
-  font-weight:800
-}
-
-#olivia-portfolio .play-banner .button {
-  background: var(--cream);
-  color: var(--wine);
-  box-shadow:none
-}
-
-#olivia-portfolio #play-projects {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap:28px
-}
-
-#olivia-portfolio .play .project {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  margin: 0;
-  background: var(--cream);
-  padding: 20px;
-  gap: 12px;
-  min-width:0
-}
-
-#olivia-portfolio .play .project:nth-child(1) {
-  transform:rotate(-1deg)
-}
-
-#olivia-portfolio .play .project:nth-child(2) {
-  transform: rotate(1deg);
-  border-radius:30px 0 0 0
-}
-
-#olivia-portfolio .play .project:last-child {
-  grid-column: 1/-1;
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 30px;
-  border-bottom: 8px solid var(--red);
-  background:var(--sand)
-}
-
-#olivia-portfolio .play-art {
-  opacity: .4;
-  border-color: var(--red);
-  right:-180px
-}
-
-#olivia-portfolio #about {
-  background: var(--mint);
-  padding: 36px;
-  margin-top: 45px;
-  border-radius:3px 60px 3px 3px
-}
-
-#olivia-portfolio #about .section-heading {
-  align-items:center
-}
-
-#olivia-portfolio #about .section-heading p {
-  color:var(--blue)
-}
-
-#olivia-portfolio .about-grid {
-  gap: 40px;
-  grid-template-columns:.8fr 1.2fr
-}
-
-#olivia-portfolio .portrait {
-  background: var(--orange);
-  border-radius: 140px 140px 8px 8px;
-  box-shadow:-12px 12px 0 var(--blue)
-}
-
-#olivia-portfolio .portrait .placeholder {
-  color:var(--ink)
-}
-
-#olivia-portfolio .about-copy h3 {
-  font-family: Arial,Helvetica,sans-serif;
-  font-weight:800
-}
-
-#olivia-portfolio .about-copy p {
-  color: var(--ink);
-  font-size:18px
-}
-
-#olivia-portfolio .contact {
-  background: var(--wine);
-  margin: 65px -46px 0;
-  padding: 50px 46px 65px;
-  border: 0;
-  min-height:290px
-}
-
-#olivia-portfolio .contact h2,#olivia-portfolio .contact .eyebrow {
-  color: var(--cream);
-  position: relative;
-  z-index:1
-}
-
-#olivia-portfolio .contact-links a {
-  color: var(--cream);
-  font-size:19px
-}
-
-#olivia-portfolio .contact-links a:hover {
-  color:var(--sand)
-}
-
-#olivia-portfolio .contact-art {
-  background: var(--red);
-  width: 270px;
-  height: 270px;
-  border-radius: 50%;
-  right: -90px;
-  bottom: -70px;
-  opacity: 1;
-  border:35px solid var(--rust)
-}
-
-#olivia-portfolio footer {
-  border: 0;
-  padding:26px 0
-}
-
-@media(max-width:900px) {
-  #olivia-portfolio .hero-art {
-    right: -180px;
-    opacity:.7
-  }
-  #olivia-portfolio h1 {
-    max-width:680px
-  }
-  #olivia-portfolio .work .project:first-child {
-    grid-template-columns:1fr
-  }
-}
-
-@media(max-width:760px) {
-  #olivia-portfolio h1 {
-    font-size: clamp(42px,8vw,60px);
-    letter-spacing:-2px
-  }
-  #olivia-portfolio .hero {
-    min-height: 0;
-    padding:55px 0
-  }
-  #olivia-portfolio .hero-art {
-    right: -205px;
-    opacity:.4
-  }
-  #olivia-portfolio #work-projects,#olivia-portfolio #play-projects {
-    grid-template-columns:1fr
-  }
-  #olivia-portfolio .work .project:last-child,#olivia-portfolio .play .project:last-child {
-    display: flex;
-    gap:12px
-  }
-  #olivia-portfolio .play {
-    margin: 45px -23px;
-    padding: 35px 23px;
-    border-radius:25px 0
-  }
-  #olivia-portfolio .play .project:nth-child(1),#olivia-portfolio .play .project:nth-child(2) {
-    transform:none
-  }
-  #olivia-portfolio .play .section-heading {
-    align-items:flex-start
-  }
-  #olivia-portfolio #about {
-    padding: 25px 22px;
-    border-radius:3px 35px 3px 3px
-  }
-  #olivia-portfolio .about-grid {
-    grid-template-columns: 1fr;
-    gap:35px
-  }
-  #olivia-portfolio .about-copy h3 {
-    font-size:30px
-  }
-  #olivia-portfolio .contact {
-    margin: 45px -23px 0;
-    padding:40px 23px 55px
-  }
-  #olivia-portfolio .contact-links {
-    flex-direction: column;
-    gap:14px
-  }
-  #olivia-portfolio .contact-links a {
-    font-size:17px
-  }
-  #olivia-portfolio .portrait {
-    max-width:310px
-  }
-  #olivia-portfolio .section-heading h2 {
-    letter-spacing:-2px
-  }
-}
-
-/* PAGE BACKGROUND & STICKY NAVIGATION */
-
-html, body {
-  background:  #f4e8cd;
-  margin:  0;
-}
-
-#olivia-portfolio {
-  position:  relative;
-  overflow:  clip;
-  background:  var(--cream);
-}
-
-#olivia-portfolio .wrap {
-  z-index:  1;
-}
-
-#olivia-portfolio header {
-  position:  sticky;
-  top:  0;
-  z-index:  50;
-  background:  var(--cream);
-  margin:  0 -46px;
-  padding:  18px 46px;
-  box-shadow:  0 5px 0 #0012190c;
-}
-
-#olivia-portfolio .section, #olivia-portfolio .contact {
-  scroll-margin-top:  115px;
-}
-
-/* DECORATIVE BACKGROUND: stays attached to the page as you scroll */
-
-#olivia-portfolio .background-designs {
-  position:  absolute;
-  inset:  0;
-  pointer-events:  none;
-  z-index:  0;
-  overflow:  clip;
-}
-
-#olivia-portfolio .decoration {
-  position:  absolute;
-}
-
-#olivia-portfolio .sunburst {
-  width:  360px;
-  height:  360px;
-  right:  -150px;
-  top:  560px;
-  background:  repeating-conic-gradient(var(--gold) 0deg 12deg, transparent 12deg 24deg);
-  border-radius:  50%;
-  opacity:  .55;
-}
-
-#olivia-portfolio .sunburst::after {
-  content:  '';
-  position:  absolute;
-  inset:  100px;
-  background:  var(--rust);
-  border-radius:  50%;
-}
-
-#olivia-portfolio .dots {
-  left:  -40px;
-  top:  1100px;
-  width:  230px;
-  height:  400px;
-  background:  radial-gradient(circle, var(--teal) 5px, transparent 6px) 0 0 / 30px 30px;
-  transform:  rotate(-12deg);
-  opacity:  .6;
-}
-
-#olivia-portfolio .rainbow {
-  left:  -180px;
-  top:  1900px;
-  width:  420px;
-  height:  420px;
-  border-radius:  50%;
-  border:  30px solid var(--orange);
-  box-shadow:  0 0 0 24px var(--gold), 0 0 0 48px var(--mint), 0 0 0 72px var(--teal);
-  opacity:  .55;
-}
-
-#olivia-portfolio .checker {
-  right:  -55px;
-  top:  60%;
-  width:  200px;
-  height:  350px;
-  background:  conic-gradient(var(--red) 25%, transparent 0 50%, var(--red) 0 75%, transparent 0) 0 0 / 70px 70px;
-  transform:  rotate(15deg);
-  opacity:  .25;
-}
-
-#olivia-portfolio .ribbon {
-  left:  -100px;
-  bottom:  580px;
-  width:  310px;
-  height:  480px;
-  border:  34px solid var(--blue);
-  border-radius:  48%;
-  transform:  rotate(-32deg);
-  box-shadow:  0 0 0 20px var(--mint);
-  opacity:  .55;
-}
-
-#olivia-portfolio .hero-art {
-  right:  -90px;
-  width:  320px;
-  height:  370px;
-}
-
-#olivia-portfolio .work-art {
-  width:  430px;
-  height:  600px;
-  left:  -260px;
-  border-width:  24px;
-}
-
-#olivia-portfolio .play-art {
-  width:  420px;
-  height:  420px;
-  border-width:  60px;
-  right:  -190px;
-}
-
-/* CONTACT ICONS: drawn with CSS, so no extra image files are needed */
-
-#olivia-portfolio .contact-links {
-  gap:  18px 28px;
-}
-
-#olivia-portfolio .contact-links a {
-  display:  flex;
-  align-items:  center;
-  gap:  12px;
-  text-decoration:  none;
-}
-
-#olivia-portfolio .contact-label {
-  color:  inherit;
-  text-decoration:  underline;
-  text-underline-offset:  5px;
-  overflow-wrap:  anywhere;
-  min-width:  0;
-}
-
-#olivia-portfolio .contact-icon {
-  width:  42px;
-  height:  42px;
-  flex:  0 0 42px;
-  display:  inline-flex;
-  align-items:  center;
-  justify-content:  center;
-  border:  1px solid var(--sand);
-  border-radius:  9px;
-  color:  var(--cream);
-  font:  700 19px Arial, sans-serif;
-  position:  relative;
-}
-
-#olivia-portfolio .email-icon::before {
-  content:  '';
-  width:  23px;
-  height:  16px;
-  border:  2px solid currentColor;
-  border-radius:  2px;
-}
-
-#olivia-portfolio .email-icon::after {
-  content:  '';
-  position:  absolute;
-  width:  14px;
-  height:  14px;
-  border-right:  2px solid currentColor;
-  border-bottom:  2px solid currentColor;
-  transform:  rotate(45deg);
-  top:  7px;
-}
-
-#olivia-portfolio .github-icon {
-  font:  700 17px monospace;
-}
-
-#olivia-portfolio .linkedin-icon {
-  font-size:  22px;
-  letter-spacing:  -1px;
-}
-
-@media (max-width: 760px) {
-  #olivia-portfolio header {
-    margin:  0 -23px;
-    padding:  12px 23px;
-    gap:  9px;
-  }
-  #olivia-portfolio .section, #olivia-portfolio .contact {
-    scroll-margin-top:  150px;
-  }
-  #olivia-portfolio .hero-art {
-    right:  -235px;
-  }
-  #olivia-portfolio .sunburst, #olivia-portfolio .rainbow, #olivia-portfolio .ribbon {
-    opacity:  .25;
-  }
-  #olivia-portfolio .contact-links a {
-    font-size:  15px;
-  }
-}
-
-/* Headings use sans-serif; paragraphs keep the serif body font. */
-#olivia-portfolio h2, #olivia-portfolio h3, #olivia-portfolio h4 {
-  font-family: Arial, Helvetica, sans-serif;
-}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Olivia Watson — UI/UX product designer and artist in Denver, Colorado. Accessible, data-heavy scientific interfaces for NOAA.">
+<meta property="og:title" content="Olivia Watson · Product Designer & Artist">
+<meta property="og:description" content="Accessible, responsive interfaces for complex scientific applications.">
+<meta name="theme-color" content="#001219">
+<title>Olivia Watson · Product Designer & Artist</title>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     1. CSS / VISUAL DESIGN
+     Palette: coolors.co/palette/001219-005f73-0a9396-94d2bd-e9d8a6-ee9b00-ca6702-bb3e03-ae2012-9b2226
+     ============================================================ -->
+<style>
+:root {
+  --ink:#001219; --blue:#005f73; --teal:#0a9396; --mint:#94d2bd; --sand:#e9d8a6;
+  --gold:#ee9b00; --orange:#ca6702; --rust:#bb3e03; --red:#ae2012; --wine:#9b2226;
+  --cream:#f6efdc;
+  --panel:#04222c; --line:rgba(148,210,189,.2);
+  --text:#f6efdc; --muted:rgba(246,239,220,.76);
+  --display:'Space Grotesk',Inter,system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --body:Inter,system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:auto}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--ink);color:var(--text);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,p,ul{margin:0}
+ul{padding:0;list-style:none}
+a{color:inherit;text-underline-offset:4px}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;position:relative}
+.skip{position:absolute;left:16px;top:-80px;background:var(--gold);color:var(--ink);padding:10px 16px;z-index:200;border-radius:6px;font-weight:600}
+.skip:focus{top:12px}
+
+/* scroll progress */
+.progress{position:fixed;left:0;top:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--teal),var(--mint),var(--gold),var(--rust));z-index:120}
+
+/* header */
+header.site{position:sticky;top:0;z-index:100;background:rgba(0,18,25,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-top:14px;padding-bottom:14px}
+.wordmark{font:700 18px var(--display);letter-spacing:-.3px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.wordmark i{width:12px;height:12px;border-radius:50%;background:conic-gradient(var(--gold),var(--rust),var(--teal),var(--gold));display:inline-block}
+nav ul{display:flex;gap:2px;flex-wrap:wrap}
+nav a{display:block;font-size:14px;padding:8px 14px;border-radius:999px;text-decoration:none;color:var(--muted);transition:background .2s,color .2s}
+nav a:hover{background:rgba(148,210,189,.14);color:var(--text)}
+nav a[aria-current="true"]{background:var(--sand);color:var(--ink)}
+
+/* dither canvas utility */
+canvas.dither{position:absolute;inset:0;width:100%;height:100%;display:block;image-rendering:pixelated;image-rendering:crisp-edges}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);min-height:min(86vh,760px);display:flex;align-items:center}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,18,25,.88) 0%,rgba(0,18,25,.55) 45%,rgba(0,18,25,0) 80%),linear-gradient(0deg,rgba(0,18,25,.65),transparent 35%);pointer-events:none}
+.hero-inner{padding-top:90px;padding-bottom:80px;width:100%}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--mint);display:flex;align-items:center;gap:10px;margin-bottom:26px}
+.eyebrow:before{content:"";width:28px;height:1px;background:var(--mint)}
+h1{font:700 clamp(46px,7.6vw,102px)/.95 var(--display);letter-spacing:-.045em;max-width:900px;margin-bottom:30px}
+h1 em{font-style:normal;background:linear-gradient(95deg,var(--mint),var(--sand) 45%,var(--gold) 75%,var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:clamp(17px,1.6vw,20px);max-width:620px;color:var(--muted);margin-bottom:38px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:56px}
+.button{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:999px;font:600 15px var(--body);text-decoration:none;border:1px solid transparent;transition:transform .2s,background .2s,box-shadow .2s}
+.button.primary{background:var(--gold);color:var(--ink)}
+.button.primary:hover{background:var(--sand);transform:translateY(-2px);box-shadow:0 10px 30px rgba(238,155,0,.28)}
+.button.ghost{border-color:rgba(246,239,220,.45);color:var(--text);background:rgba(0,18,25,.35)}
+.button.ghost:hover{background:var(--cream);color:var(--ink)}
+.button[disabled]{cursor:default;opacity:.8;border:1px dashed rgba(148,210,189,.5);background:transparent;color:var(--muted);font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,200px));gap:16px}
+.stat{padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:rgba(0,18,25,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.stat b{display:block;font:700 34px/1 var(--display);letter-spacing:-.03em;color:var(--sand);margin-bottom:6px}
+.stat span{font-size:13px;color:var(--muted);line-height:1.35;display:block}
+
+/* marquee */
+.marquee{border-bottom:1px solid var(--line);overflow:hidden;background:var(--panel);padding:16px 0}
+.marquee-track{display:flex;gap:44px;width:max-content;animation:scroll 42s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-group{display:flex;gap:44px;align-items:center}
+.marquee span{font:500 13px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mint);white-space:nowrap;display:flex;align-items:center;gap:44px}
+.marquee span:after{content:"✦";color:var(--gold)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none;flex-wrap:wrap;width:auto;padding:0 32px}.marquee-group[aria-hidden]{display:none}.marquee-group{flex-wrap:wrap;gap:14px 30px}}
+
+/* sections */
+.section{position:relative;padding:110px 0 100px}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:54px;flex-wrap:wrap}
+.kicker{font:500 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px}
+h2{font:700 clamp(40px,5.6vw,76px)/1 var(--display);letter-spacing:-.04em}
+.section-head p{max-width:400px;color:var(--muted);font-size:17px}
+.light{background:var(--cream);color:var(--ink)}
+.light .kicker{color:var(--rust)}
+.light .section-head p{color:#27414b}
+.strip{position:relative;height:120px;overflow:hidden;margin:-1px 0}
+.reveal{opacity:1}
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+.project{position:relative;display:flex;flex-direction:column;gap:22px;padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:22px;overflow:hidden;min-width:0;transition:border-color .25s,transform .25s}
+.project:before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(238,155,0,.16),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.project:hover{border-color:rgba(238,155,0,.55);transform:translateY(-3px)}
+.project:hover:before{opacity:1}
+.project > *{position:relative}
+.work-grid .project:nth-child(1),.work-grid .project:nth-child(4),.play-grid .project:nth-child(3){grid-column:1/-1;display:grid;grid-template-columns:1.5fr 1fr;gap:34px;align-items:center}
+.work-grid .project:nth-child(4){grid-template-columns:1fr 1.5fr}
+.work-grid .project:nth-child(4) .carousel{order:2}
+.carousel{min-width:0}
+.slide-frame{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:16/10;background:var(--blue)}
+.slide{position:absolute;inset:0;margin:0}
+.slide[hidden]{display:none}
+.slide img{width:100%;height:100%;object-fit:contain;display:block;background:var(--ink)}
+.placeholder{position:absolute;inset:0;display:flex;align-items:flex-end;padding:18px}
+.placeholder .chip-label{position:relative;background:rgba(0,18,25,.86);border:1px solid var(--line);border-radius:12px;padding:10px 14px;max-width:80%}
+.placeholder strong{display:block;font:600 17px/1.2 var(--display);color:var(--cream)}
+.placeholder span{display:block;font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mint);margin-top:5px}
+.controls{display:flex;justify-content:space-between;align-items:center;padding-top:14px}
+.slide-count{font:500 12px var(--mono);color:var(--muted);letter-spacing:.04em}
+.arrows{display:flex;gap:8px}
+.arrow{width:44px;height:44px;border-radius:50%;border:1px solid rgba(148,210,189,.4);background:transparent;font-size:18px;line-height:1;transition:background .2s,color .2s}
+.arrow:hover:not(:disabled){background:var(--mint);color:var(--ink)}
+.arrow:disabled{opacity:.35;cursor:default}
+.number{font:500 12px var(--mono);letter-spacing:.14em;color:var(--gold);display:block;margin-bottom:12px}
+h3{font:700 clamp(26px,2.6vw,34px)/1.1 var(--display);letter-spacing:-.03em;margin-bottom:14px}
+.project-info p.desc{color:var(--muted);font-size:16px;margin-bottom:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{font:500 12px var(--mono);letter-spacing:.03em;padding:6px 12px;border-radius:999px;border:1px solid rgba(148,210,189,.4);color:var(--mint)}
+
+/* experience (light) */
+.xp{display:grid;grid-template-columns:minmax(260px,.8fr) 1.6fr;gap:30px;align-items:start}
+.tablist{display:flex;flex-direction:column;gap:10px}
+.tab{text-align:left;padding:18px 20px;border-radius:16px;border:1px solid rgba(0,18,25,.18);background:transparent;transition:background .2s,border-color .2s,transform .2s;color:var(--ink)}
+.tab:hover{background:rgba(0,95,115,.08)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--cream);border-color:var(--ink);transform:translateX(6px)}
+.tab small{display:block;font:500 12px var(--mono);letter-spacing:.1em;color:var(--blue);margin-bottom:6px}
+.tab[aria-selected="true"] small{color:var(--gold)}
+.tab strong{font:600 18px/1.25 var(--display);display:block}
+.tab span{font-size:14px;opacity:.8;display:block;margin-top:2px}
+.panel{background:#fff;border:1px solid rgba(0,18,25,.12);border-radius:22px;padding:34px;box-shadow:12px 12px 0 var(--sand);min-height:420px}
+.panel h3{margin-bottom:6px}
+.panel .meta{font:500 13px var(--mono);color:var(--blue);margin-bottom:22px;letter-spacing:.04em}
+.panel li{position:relative;padding-left:26px;margin-bottom:12px;color:#1c3641}
+.panel li:before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;background:conic-gradient(var(--gold) 0 50%,var(--rust) 0);border-radius:50%}
+.panel .chips{margin:26px 0 0}
+.panel .chip{border-color:rgba(0,95,115,.45);color:var(--blue)}
+
+/* skills */
+.skills-top{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+.filter{padding:9px 18px;border-radius:999px;border:1px solid rgba(148,210,189,.4);background:transparent;font-size:14px;transition:background .2s,color .2s}
+.filter:hover{background:rgba(148,210,189,.14)}
+.filter[aria-pressed="true"]{background:var(--mint);color:var(--ink);border-color:var(--mint);font-weight:600}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-bottom:70px}
+.skill{padding:18px 20px;border-radius:16px;background:var(--panel);border:1px solid var(--line);position:relative;overflow:hidden;transition:opacity .3s,transform .3s,border-color .3s}
+.skill:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c,var(--teal))}
+.skill small{display:block;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mint);margin-bottom:6px}
+.skill strong{font:600 17px/1.3 var(--display)}
+.skill.dim{opacity:.22;transform:scale(.97)}
+.checker{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:34px;border:1px solid var(--line);border-radius:24px;background:var(--panel)}
+.checker h3{font-size:28px}
+.checker p.sub{color:var(--muted);margin-bottom:22px}
+.swatch-row{margin-bottom:18px}
+.swatch-row > span{display:block;font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mint);margin-bottom:10px}
+.swatches{display:flex;flex-wrap:wrap;gap:8px}
+.sw{width:38px;height:38px;border-radius:10px;border:2px solid rgba(246,239,220,.25);padding:0;transition:transform .15s}
+.sw:hover{transform:scale(1.1)}
+.sw[aria-pressed="true"]{border-color:var(--cream);box-shadow:0 0 0 3px var(--gold)}
+.preview{border-radius:18px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-height:230px;border:1px solid var(--line);transition:background .25s,color .25s}
+.preview .big{font:700 clamp(44px,6vw,72px)/1 var(--display);letter-spacing:-.04em}
+.preview .ratio{font:600 22px var(--display)}
+.preview p{font-size:15px}
+.results{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.badge{font:600 12px var(--mono);padding:6px 12px;border-radius:999px;background:var(--ink);color:var(--cream);border:1px solid transparent}
+.badge.pass:before{content:"✓ ";color:var(--mint)}
+.badge.fail:before{content:"✕ ";color:#ff9a8a}
+.badge.fail{border-color:#ff9a8a}
+
+/* play */
+.play{background:linear-gradient(180deg,var(--ink),#1a0b0b 100%);overflow:hidden}
+.play-banner{position:relative;overflow:hidden;border-radius:22px;margin-bottom:28px;border:1px solid rgba(238,155,0,.35);min-height:150px;display:flex;align-items:center}
+.play-banner .inner{position:relative;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:30px 34px;width:100%;background:linear-gradient(90deg,rgba(0,18,25,.88),rgba(0,18,25,.2))}
+.play-banner strong{font:700 30px var(--display);display:block;letter-spacing:-.03em}
+.play-banner p{color:var(--muted)}
+.play .kicker{color:var(--orange)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+.portrait{position:relative;aspect-ratio:4/5;border-radius:200px 200px 22px 22px;overflow:hidden;border:1px solid var(--line)}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block;position:relative}
+.portrait .placeholder{align-items:flex-end;justify-content:center;padding:26px}
+.about-copy p{color:var(--muted);font-size:18px;margin-bottom:18px;max-width:600px}
+.about-copy .location{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.about-copy h3{font-size:clamp(30px,3.6vw,46px);margin:12px 0 20px}
+
+/* contact */
+.contact{position:relative;overflow:hidden;padding:110px 0 120px;border-top:1px solid var(--line)}
+.contact .scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,18,25,.85),rgba(0,18,25,.2) 70%);pointer-events:none}
+.contact h2{max-width:720px;margin-bottom:34px}
+.contact-links{display:flex;flex-wrap:wrap;gap:14px}
+.contact-links a{display:flex;align-items:center;gap:14px;padding:12px 20px 12px 12px;border-radius:16px;background:rgba(0,18,25,.88);border:1px solid rgba(246,239,220,.28);text-decoration:none;transition:transform .2s,border-color .2s,background .2s;overflow-wrap:anywhere}
+.contact-links a:hover{transform:translateY(-3px);border-color:var(--gold);background:var(--ink)}
+.contact-icon{width:42px;height:42px;flex:0 0 42px;border-radius:11px;display:grid;place-items:center;background:var(--gold);color:var(--ink);font:700 16px var(--mono)}
+.contact-links small{display:block;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mint)}
+footer.site{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--muted);background:var(--ink)}
+footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  .xp,.about-grid,.checker{grid-template-columns:1fr}
+  .tablist{flex-direction:row;overflow-x:auto;padding-bottom:6px}
+  .tab{min-width:230px}
+  .tab[aria-selected="true"]{transform:none}
+  .work-grid .project:nth-child(1),.work-grid .project:nth-child(4),.play-grid .project:nth-child(3){grid-template-columns:1fr;gap:22px}
+  .work-grid .project:nth-child(4) .carousel{order:0}
+  .about-grid{gap:36px}
+  .portrait{max-width:340px}
+}
+@media(max-width:700px){
+  .wrap{padding:0 20px}
+  header.site .wrap{flex-direction:column;align-items:flex-start;gap:8px}
+  nav ul{gap:0}
+  nav a{padding:7px 11px;font-size:13px}
+  .grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(3,1fr);gap:10px}
+  .stat{padding:12px}.stat b{font-size:26px}
+  .section{padding:80px 0 70px}
+  .panel{padding:24px;box-shadow:8px 8px 0 var(--sand)}
+  .hero-scrim{background:linear-gradient(0deg,rgba(0,18,25,.85),rgba(0,18,25,.55))}
+}
+</style>
 </head>
 <body>
-<!-- 2. HTML / PAGE CONTENT: introduction, About Me, and contact links -->
-<div id="olivia-portfolio">
-  <!-- Decorative shapes are hidden from screen readers. -->
-  <div class="background-designs" aria-hidden="true">
-    <div class="decoration sunburst">
-    </div>
-    <div class="decoration dots">
-    </div>
-    <div class="decoration rainbow">
-    </div>
-    <div class="decoration checker">
-    </div>
-    <div class="decoration ribbon">
-    </div>
-  </div>
-  <a class="skip" href="#main">
-    Skip to content
-  </a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- 2. HTML / PAGE CONTENT -->
+<header class="site">
   <div class="wrap">
-    <!-- NAVIGATION -->
-    <header>
-      <a href="#main" class="wordmark">
-        Olivia Watson
-        <span>
-          .
-        </span>
-      </a>
-      <nav aria-label="Main navigation">
-        <a href="#work">
-          Work
-        </a>
-        <a href="#play">
-          Play
-        </a>
-        <a href="#about">
-          About Me
-        </a>
-        <a href="#contact">
-          Contact
-        </a>
-      </nav>
-    </header>
-    <main id="main">
-      <!-- INTRODUCTION -->
-      <section class="hero" aria-labelledby="intro-title">
-        <div class="hero-art" aria-hidden="true">
-        </div>
-        <p class="eyebrow">
-          Product designer & artist · Denver, CO
-        </p>
-        <h1 id="intro-title">
-          A thoughtful approach.
-          <br>
-          <em>
-            A creative perspective.
-          </em>
-        </h1>
-        <div class="hero-bottom">
-          <p class="intro">
-            I’m Olivia. I bring a background in software development and art to the design of clear, accessible experiences for complex scientific applications.
-          </p>
-          <a class="button" href="#work">
-            Explore my work ↗
-          </a>
-        </div>
-      </section>
-      <!-- WORK -->
-      <section class="section work" id="work" aria-labelledby="work-title">
-        <div class="work-art" aria-hidden="true">
-        </div>
-        <div class="section-heading">
-          <h2 id="work-title">
-            Work
-          </h2>
-          <p>
-            Interfaces, interactions, and the thinking behind them.
-          </p>
-        </div>
-        <div id="work-projects">
-        </div>
-      </section>
-      <!-- PLAY -->
-      <section class="section play" id="play" aria-labelledby="play-title">
-        <div class="play-art" aria-hidden="true">
-        </div>
-        <div class="section-heading">
-          <h2 id="play-title">
-            Play
-          </h2>
-          <p>
-            A place for experiments, illustrations, and making things by hand.
-          </p>
-        </div>
-        <div class="play-banner">
-          <p>
-            <strong>
-              @Artolivias
-            </strong>
-            My creative corner, beyond the interface.
-          </p>
-          <a class="button warm" href="https://www.instagram.com/artolivias/" target="_blank" rel="noopener noreferrer">
-            Find me on Instagram ↗
-          </a>
-        </div>
-        <div id="play-projects">
-        </div>
-      </section>
-      <!-- ABOUT ME -->
-      <section class="section" id="about" aria-labelledby="about-title">
-        <div class="section-heading">
-          <h2 id="about-title">
-            About Me
-          </h2>
-          <p>
-            A little of the person behind the pixels.
-          </p>
-        </div>
-        <div class="about-grid">
-          <div class="portrait" id="portrait-slot">
-            <div class="placeholder">
-              <strong>
-                Hello, I’m Olivia.
-              </strong>
-              <span>
-                Your portrait goes here
-              </span>
-              <small>
-                Image placeholder
-              </small>
-            </div>
-          </div>
-          <div class="about-copy">
-            <p class="location">
-              Located in Denver, CO
-            </p>
-            <h3 id="about-heading">
-              Curiosity connects my work.
-            </h3>
-            <div id="about-text">
-              <p>
-                I’m a product designer with a background in front-end development and a longstanding creative practice.
-              </p>
-              <p>
-                I enjoy understanding how people use complex information, working through ideas with stakeholders, and collaborating with developers to bring thoughtful designs to life.
-              </p>
-              <p>
-                Outside of product design, I work across illustration, traditional media, and visual storytelling.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- CONTACT -->
-      <section class="contact" id="contact" aria-labelledby="contact-title">
-        <div class="contact-art" aria-hidden="true">
-        </div>
-        <p class="eyebrow">
-          Let’s connect
-        </p>
-        <h2 id="contact-title">
-          Start with a hello.
-        </h2>
-        <div class="contact-links">
-          <a href="mailto:watson_olivia@yahoo.com">
-            <span class="contact-icon email-icon" aria-hidden="true">
-            </span>
-            <span class="contact-label">
-              watson_olivia@yahoo.com ↗
-            </span>
-          </a>
-          <a href="https://github.com/olivia-wats" target="_blank" rel="noopener noreferrer">
-            <span class="contact-icon github-icon" aria-hidden="true">
-              &lt;/&gt;
-            </span>
-            <span class="contact-label">
-              GitHub · olivia-wats ↗
-            </span>
-          </a>
-          <a href="https://www.linkedin.com/in/okaleah/" target="_blank" rel="noopener noreferrer">
-            <span class="contact-icon linkedin-icon" aria-hidden="true">
-              in
-            </span>
-            <span class="contact-label">
-              LinkedIn ↗
-            </span>
-          </a>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <span>
-        © 2026 Olivia Watson
-      </span>
-      <a href="#main">
-        Back to top ↑
-      </a>
-    </footer>
+    <a class="wordmark" href="#main"><i aria-hidden="true"></i>Olivia Watson</a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#play">Play</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </div>
-</div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="intro-title">
+    <canvas class="dither" data-preset="hero" aria-hidden="true"></canvas>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">UI/UX Product Designer · Denver, CO</p>
+      <h1 id="intro-title">Complex science, <em>made clear.</em></h1>
+      <p class="lede">I design accessible, data-heavy interfaces for NOAA’s Office of Water Prediction, pairing a front-end development background with a fine-art eye for hierarchy, color, and composition.</p>
+      <div class="cta">
+        <a class="button primary" href="#work">View selected work ↗</a>
+        <a class="button ghost" href="#contact">Get in touch</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b><span data-count="7">7</span>+</b><span>years designing &amp; building data-heavy apps</span></div>
+        <div class="stat"><b>AA</b><span>Section 508 / WCAG 2.1 standard in every design</span></div>
+        <div class="stat"><b><span data-count="3">3</span></b><span>device classes: desktop, tablet &amp; mobile</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILL MARQUEE -->
+  <div class="marquee" aria-label="Core skills">
+    <div class="marquee-track" id="marquee"></div>
+  </div>
+
+  <!-- WORK -->
+  <section class="section" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div><span class="kicker">01 — Selected work</span><h2 id="work-title">Work</h2></div>
+        <p>Interfaces, interactions, and the thinking behind them.</p>
+      </div>
+      <div class="grid work-grid" id="work-projects"></div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true"><canvas class="dither" data-preset="stripDown"></canvas></div>
+
+  <!-- EXPERIENCE -->
+  <section class="section light" id="experience" aria-labelledby="xp-title" style="padding-top:60px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div><span class="kicker">02 — Experience</span><h2 id="xp-title">Experience</h2></div>
+        <p>From front-end developer to lead designer and product manager. Select a role to read more.</p>
+      </div>
+      <div class="xp reveal">
+        <div class="tablist" role="tablist" aria-label="Work history" aria-orientation="vertical" id="tablist"></div>
+        <div class="panel" id="xp-panel" role="tabpanel" tabindex="0"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true"><canvas class="dither" data-preset="stripUp"></canvas></div>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills" aria-labelledby="skills-title" style="padding-top:60px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div><span class="kicker">03 — Toolkit</span><h2 id="skills-title">Skills</h2></div>
+        <p>Design craft, accessibility rigor, and the front-end fluency to ship it.</p>
+      </div>
+      <div class="skills-top reveal" role="group" aria-label="Filter skills by category" id="filters"></div>
+      <div class="skill-grid reveal" id="skill-grid"></div>
+
+      <div class="checker reveal" aria-labelledby="checker-title">
+        <div>
+          <span class="kicker">Try it</span>
+          <h3 id="checker-title">Accessibility, live.</h3>
+          <p class="sub">Contrast is one of the checks I run on every design. Pick a text and background color from my palette and see how it measures against WCAG 2.1.</p>
+          <div class="swatch-row"><span id="fg-label">Text color</span><div class="swatches" id="fg" role="group" aria-labelledby="fg-label"></div></div>
+          <div class="swatch-row"><span id="bg-label">Background color</span><div class="swatches" id="bg" role="group" aria-labelledby="bg-label"></div></div>
+        </div>
+        <div>
+          <div class="preview" id="preview">
+            <div class="big" aria-hidden="true">Aa</div>
+            <div>
+              <div class="ratio" id="ratio" aria-live="polite"></div>
+              <p>Clear, readable data starts with sufficient contrast.</p>
+            </div>
+          </div>
+          <div class="results" id="results" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAY -->
+  <section class="section play" id="play" aria-labelledby="play-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div><span class="kicker">04 — Beyond the interface</span><h2 id="play-title">Play</h2></div>
+        <p>Illustration, traditional media, and visual storytelling. Work featured in museum exhibitions and published projects.</p>
+      </div>
+      <div class="play-banner reveal">
+        <canvas class="dither" data-preset="warm" aria-hidden="true"></canvas>
+        <div class="inner">
+          <p><strong>@Artolivias</strong>My creative corner, beyond the interface.</p>
+          <a class="button primary" href="https://www.instagram.com/artolivias/" target="_blank" rel="noopener noreferrer">Find me on Instagram ↗</a>
+        </div>
+      </div>
+      <div class="grid play-grid" id="play-projects"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div><span class="kicker">05 — About</span><h2 id="about-title">About Me</h2></div>
+        <p>A little of the person behind the pixels.</p>
+      </div>
+      <div class="about-grid reveal">
+        <div class="portrait" id="portrait-slot">
+          <canvas class="dither" data-preset="portrait" aria-hidden="true"></canvas>
+          <div class="placeholder"><div class="chip-label"><strong>Hello, I’m Olivia.</strong><span>Portrait placeholder</span></div></div>
+        </div>
+        <div class="about-copy">
+          <p class="location">Located in Denver, CO</p>
+          <h3>Curiosity connects my work.</h3>
+          <div id="about-text">
+            <p>I’m a UI/UX product designer with a technical background in front-end development and a longstanding creative practice.</p>
+            <p>I enjoy understanding how people use complex information, working through ideas with stakeholders, hydrologists, and scientists, and collaborating with developers to bring accessible, thoughtful designs to life.</p>
+            <p>Outside of product design, I work across illustration, traditional media, and visual storytelling.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <canvas class="dither" data-preset="contact" aria-hidden="true"></canvas>
+    <div class="scrim" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="eyebrow">Let’s connect</p>
+      <h2 id="contact-title">Start with a hello.</h2>
+      <div class="contact-links">
+        <a href="mailto:watson_olivia@yahoo.com">
+          <span class="contact-icon" aria-hidden="true">@</span>
+          <span><small>Email</small>watson_olivia@yahoo.com ↗</span>
+        </a>
+        <a href="https://github.com/olivia-wats" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon" aria-hidden="true">&lt;/&gt;</span>
+          <span><small>GitHub</small>olivia-wats ↗</span>
+        </a>
+        <a href="https://www.linkedin.com/in/okaleah/" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon" aria-hidden="true">in</span>
+          <span><small>LinkedIn</small>Connect with me ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Olivia Watson · Designed &amp; built by hand</span>
+    <a href="#main">Back to top ↑</a>
+  </div>
+</footer>
+<noscript><p style="padding:20px;text-align:center">Please enable JavaScript to view the galleries and interactive sections.</p></noscript>
+
 <script>
 /* ================================================================
    3. CONTENT SETTINGS
-   Edit project text, images, and prototype links in this section.
+   Edit project text, images, and prototype links here.
 
    Images example:
    images: [
-     {
-       src: 'images/atlas-01.jpg',
-       alt: 'Describe what this screenshot shows',
-       caption: 'Map view'
-     }
+     { src: 'images/atlas-01.jpg', alt: 'Describe the screenshot', caption: 'Map view' }
    ]
 
-   prototype: '#work' is a clickable dummy link back to Work.
-   Replace it with your real Figma prototype URL when ready.
+   prototype: leave as '' (or '#work') to show a "coming soon" button.
+   Replace with your real Figma prototype URL when ready.
    ================================================================ */
-(() => {
-  const portfolio = document.getElementById('olivia-portfolio');
-
 const work = [
- {
-    title:'NOAA OWP',
-    tag: 'UI/UX · Scientific applications',
-    text: 'Sole and lead UI/UX design supporting NOAA’s National Water Prediction Service. Accessible interfaces for public-facing and internal scientific applications.',
+  {
+    title: 'NOAA OWP',
+    tags: ['Figma', 'Design systems', 'WCAG 2.1 AA', 'Responsive'],
+    text: 'Sole and lead UI/UX designer supporting NOAA’s National Water Prediction Service. I design accessible interfaces for public-facing and internal scientific applications, from wireframes to interactive prototypes, and partner with developers through Agile implementation and QA/QC.',
     tone: 'sea',
-    prototype: '#work',
+    prototype: '',
     images: []
   },
- {
-    title:'Atlas 15',
-    tag: 'Project spotlight',
-    text: 'Add your Atlas 15 overview here: the problem, your role, the design approach, and what you want visitors to notice.',
-    tone: 'sand',
-    prototype: '#work',
+  {
+    title: 'Atlas 15',
+    tags: ['Data visualization', 'Interactive charts', 'Controls'],
+    text: 'Lead UI/UX design for NOAA Atlas 15 web capabilities, translating complex precipitation-frequency data and scientific requirements into interactive charts, controls, and understandable user experiences.',
+    tone: 'ochre',
+    prototype: '',
     images: []
   },
- {
-    title:'Rivers-at-a-glance',
-    tag: 'Project spotlight',
+  {
+    title: 'Rivers-at-a-glance',
+    tags: ['Case study', 'Coming soon'],
     text: 'Add your Rivers-at-a-glance overview here: who it serves, the challenge, and the key design decisions behind your solution.',
     tone: 'sea',
-    prototype: '#work',
+    prototype: '',
     images: []
   },
- {
-    title:'Extra',
-    tag: 'More design explorations',
+  {
+    title: 'Extra',
+    tags: ['Explorations', 'Prototypes'],
     text: 'A place for additional interface work, prototypes, and smaller design explorations.',
-    tone: 'ochre',
-    prototype: '#work',
+    tone: 'sand',
+    prototype: '',
     images: []
   }
 ];
+
 const play = [
- {
-    title:'Traditional Art',
-    tag: 'Ink · Watercolor · Gouache · Mixed media',
+  {
+    title: 'Traditional Art',
+    tags: ['Ink', 'Watercolor', 'Gouache', 'Mixed media'],
     text: 'Add a few words about these pieces, the materials you use, and what you like to explore in your traditional work.',
     tone: 'sand',
     images: []
   },
- {
-    title:'Digital Art',
-    tag: 'Illustration · Graphic design',
+  {
+    title: 'Digital Art',
+    tags: ['Illustration', 'Graphic design'],
     text: 'Add a description of your digital practice, selected illustrations, or the story behind this collection.',
     tone: 'rust',
     images: []
   },
- {
-    title:'Published',
-    tag: 'Selected features & collaborations',
-    text: 'Add publication names, credits, dates, or a short introduction to the work featured here.',
+  {
+    title: 'Published',
+    tags: ['Museum exhibitions', 'Published projects'],
+    text: 'Work featured in museum exhibitions and published projects. Add publication names, credits, and dates here.',
     tone: 'ochre',
     images: []
   }
 ];
+
 // Optional portrait. Example: 'images/olivia.jpg'. Keep empty for a placeholder.
 const portrait = '';
 const portraitAlt = 'Olivia Watson';
 
-  // AUTOMATIC GALLERY BUILDER — you usually do not need to edit below here.
-  function makeElement(tag, className, text) {
-    const element = document.createElement(tag);
-    if (className) element.className = className;
-    if (text !== undefined) element.textContent = text;
-    return element;
+const experience = [
+  {
+    period: '2022 – 2026',
+    title: 'Product Manager / Lead UI/UX Designer',
+    org: 'Orion Network Solutions · Contractor for NOAA',
+    bullets: [
+      'Sole and lead UI/UX designer supporting NOAA’s NWPS, designing accessible, data-heavy interfaces for public-facing and internal scientific applications.',
+      'Translate requirements from stakeholders, hydrologists, scientists, and end users into wireframes, high-fidelity mock-ups, and interactive Figma prototypes.',
+      'Design and maintain reusable components, design patterns, and visual standards for cohesive experiences across complex OWP web applications.',
+      'Adapt interactive maps, legends, navigation, graphs, and controls for desktop, tablet, and mobile.',
+      'Lead UI/UX design for NOAA Atlas 15 web capabilities, turning precipitation-frequency data into interactive charts, controls, and understandable experiences.',
+      'Apply Section 508 and WCAG 2.1 AA, testing with ANDI, Color Contrast Analyzer, keyboard navigation, and manual inspection.',
+      'Collaborate with developers through Agile implementation and QA/QC, and run usability reviews to refine navigation and information hierarchy.'
+    ],
+    tools: ['Figma', 'Design systems', 'Chart.js', 'Svelte', 'ANDI', 'WCAG 2.1 AA']
+  },
+  {
+    period: '2019 – 2022',
+    title: 'Software Design and Development',
+    org: 'Veris Global',
+    bullets: [
+      'Designed and developed front-end interfaces for hydrologic oil and gas SaaS software, translating complex water-data requirements into intuitive experiences.',
+      'Built responsive interfaces with HTML, CSS, and JavaScript while contributing to modernization planning for existing applications.',
+      'Created scientifically accurate interactive graphs and data visualizations that made hydrologic information actionable for field technicians.',
+      'Conducted Section 508 / WCAG accessibility research and testing, building accessible interaction and visual design into front-end interfaces.',
+      'Applied visual hierarchy, contrast, composition, and information architecture to technical, data-heavy applications.'
+    ],
+    tools: ['HTML', 'CSS', 'JavaScript', 'Data visualization', 'Section 508']
+  },
+  {
+    period: '2017 – 2026',
+    title: 'Freelance Artist & Designer',
+    org: 'Self employed',
+    bullets: [
+      'Apply formal training in visual art, composition, color, contrast, hierarchy, and digital media to freelance illustration and graphic design projects.',
+      'Work has been featured in museum exhibitions and published projects.'
+    ],
+    tools: ['Illustration', 'Graphic design', 'Traditional media', 'Digital media']
   }
+];
 
-  function buildProject(project, index, sectionName) {
-    const article = makeElement('article', 'project');
-    const projectId = sectionName + '-' + index;
-    article.setAttribute('aria-labelledby', projectId);
+const skills = [
+  { name: 'UI/UX Design & Prototyping (Figma)', cat: 'Design' },
+  { name: 'Responsive Web & Mobile Design', cat: 'Design' },
+  { name: 'Design Systems & Component Libraries', cat: 'Design' },
+  { name: 'Section 508 & WCAG 2.1 AA', cat: 'Accessibility' },
+  { name: 'Accessibility & Usability Testing', cat: 'Accessibility' },
+  { name: 'HTML5, ARIA & CSS3', cat: 'Front-end' },
+  { name: 'JavaScript / TypeScript / Svelte', cat: 'Front-end' },
+  { name: 'QA/QC & Cross-Device Testing', cat: 'Front-end' },
+  { name: 'Chart.js & Data Visualization', cat: 'Data & Maps' },
+  { name: 'Interactive Maps & Geospatial UI', cat: 'Data & Maps' }
+];
+const catColor = { 'Design': 'var(--gold)', 'Accessibility': 'var(--mint)', 'Front-end': 'var(--teal)', 'Data & Maps': 'var(--rust)' };
 
-    // Create the image carousel and its accessible label.
-    const carousel = makeElement('div', 'carousel');
-    carousel.setAttribute('role', 'region');
-    carousel.setAttribute('aria-label', project.title + ' image carousel');
-    carousel.setAttribute('aria-roledescription', 'carousel');
+/* ================================================================
+   Everything below builds the page automatically.
+   ================================================================ */
+const C = { ink:'#001219', blue:'#005f73', teal:'#0a9396', mint:'#94d2bd', sand:'#e9d8a6', gold:'#ee9b00',
+            orange:'#ca6702', rust:'#bb3e03', red:'#ae2012', wine:'#9b2226', cream:'#f6efdc' };
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const frame = makeElement('div', 'slide-frame');
-    frame.id = projectId + '-slides';
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
 
-    // Use uploaded images, or three placeholder slides when the list is empty.
-    const images = project.images.length
-      ? project.images
-      : [1, 2, 3].map(number => ({
-          placeholder: true,
-          caption: 'Image slot ' + number + ' of 3'
-        }));
+/* ---------- DITHER ENGINE (ordered Bayer dithering on <canvas>) ---------- */
+function bayer(n) {
+  if (n === 2) return [[0, 2], [3, 1]];
+  const m = bayer(n / 2), s = n / 2, out = [];
+  for (let y = 0; y < n; y++) {
+    out[y] = [];
+    for (let x = 0; x < n; x++) {
+      const q = [[0, 2], [3, 1]][Math.floor(y / s)][Math.floor(x / s)];
+      out[y][x] = 4 * m[y % s][x % s] + q;
+    }
+  }
+  return out;
+}
+const B8 = bayer(8).flat().map(v => (v + .5) / 64);
+const rgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
 
-    const slides = images.map((image, slideIndex) => {
-      const slide = makeElement('figure', 'slide');
-      slide.hidden = slideIndex !== 0;
-      slide.setAttribute('role', 'group');
-      slide.setAttribute('aria-roledescription', 'slide');
-      slide.setAttribute('aria-label', (slideIndex + 1) + ' of ' + images.length);
+const PRESETS = {
+  hero:     { stops:['ink','blue','teal','mint','sand','gold'], scale:4, angle:.6, amp:.11, fx:5, fy:7, ph:.4, glow:.55, mask:true, live:true, bias:-.05 },
+  contact:  { stops:['ink','wine','red','rust','orange','gold'], scale:4, angle:.4, amp:.1, fx:4, fy:6, ph:2.1, glow:.45, mask:true, live:true, bias:-.02 },
+  warm:     { stops:['ink','wine','red','rust','orange','gold'], scale:3, angle:.2, amp:.12, fx:6, fy:5, ph:1, glow:0, bias:0 },
+  portrait: { stops:['ink','blue','teal','mint','sand'], scale:3, angle:1.3, amp:.1, fx:4, fy:6, ph:3, glow:0, bias:0 },
+  stripDown:{ stops:['ink','blue','teal','mint','sand','cream'], scale:3, strip:1 },
+  stripUp:  { stops:['ink','blue','teal','mint','sand','cream'], scale:3, strip:-1 },
+  sea:      { stops:['ink','blue','teal','mint'], scale:3, angle:.5, amp:.14, fx:6, fy:5, glow:0 },
+  sand:     { stops:['blue','teal','mint','sand'], scale:3, angle:.9, amp:.14, fx:5, fy:6, glow:0 },
+  ochre:    { stops:['rust','orange','gold','sand'], scale:3, angle:.3, amp:.14, fx:6, fy:4, glow:0 },
+  rust:     { stops:['ink','wine','red','rust','orange'], scale:3, angle:1.1, amp:.14, fx:5, fy:6, glow:0 }
+};
 
-      if (image.placeholder) {
-        const placeholder = makeElement('div', 'placeholder tone-' + project.tone);
-        placeholder.append(
-          makeElement('strong', '', project.title),
-          makeElement('span', '', image.caption),
-          makeElement('small', '', 'Image placeholder')
-        );
-        slide.append(placeholder);
+const items = [];
+function register(canvas, preset, variant = 0) {
+  const o = Object.assign({}, PRESETS[preset], { ph: (PRESETS[preset].ph || 0) + variant * 1.7, angle: (PRESETS[preset].angle || 0) + variant * .55 });
+  const item = { canvas, o, rgb: o.stops.map(n => rgb(C[n])), m: { x:.78, y:.4, tx:.78, ty:.4, g:.5 }, visible: !o.live, w:0, h:0 };
+  items.push(item);
+  return item;
+}
+
+function render(item, time) {
+  const { canvas, o } = item;
+  const rect = canvas.getBoundingClientRect();
+  if (!rect.width || !rect.height) return;
+  const w = Math.max(2, Math.ceil(rect.width / o.scale)), h = Math.max(2, Math.ceil(rect.height / o.scale));
+  if (w !== item.w || h !== item.h) {
+    canvas.width = w; canvas.height = h; item.w = w; item.h = h;
+    item.ctx = canvas.getContext('2d');
+    item.img = item.ctx.createImageData(w, h);
+  }
+  const d = item.img.data, stops = item.rgb, n = stops.length, asp = w / h;
+  const ca = Math.cos(o.angle || 0), sa = Math.sin(o.angle || 0), m = item.m;
+  for (let y = 0; y < h; y++) {
+    const v = y / (h - 1);
+    for (let x = 0; x < w; x++) {
+      const u = x / (w - 1);
+      let t;
+      if (o.strip) {
+        const base = o.strip > 0 ? v : 1 - v;
+        t = base + .09 * Math.sin(u * 22 + v * 6) * (1 - Math.abs(base - .5) * 1.6);
       } else {
-        const picture = makeElement('img');
-        picture.src = image.src;
-        picture.alt = image.alt || project.title;
-        picture.loading = 'lazy';
-        slide.append(picture);
+        t = (u - .5) * ca + (v - .5) * sa + .5;
+        t += o.amp * Math.sin(u * o.fx + o.ph + time * .5 + v * 2.2);
+        t += o.amp * .8 * Math.sin(v * o.fy - time * .35 + o.ph * 1.7);
+        if (o.glow) {
+          const dx = (u - m.x) * asp, dy = v - m.y;
+          t += o.glow * m.g * Math.exp(-(dx * dx + dy * dy) * 9);
+        }
+        if (o.mask) { const k = Math.min(1, Math.max(0, (u - .12) / .8)); t *= .18 + .82 * k * k * (3 - 2 * k); }
+        t += o.bias || 0;
       }
-
-      frame.append(slide);
-      return slide;
-    });
-
-    // Create the slide counter and previous/next buttons.
-    const controls = makeElement('div', 'carousel-controls');
-    const counter = makeElement('span', 'slide-count');
-    counter.setAttribute('aria-live', 'polite');
-    counter.setAttribute('aria-atomic', 'true');
-
-    const arrows = makeElement('div', 'arrows');
-    const previous = makeElement('button', 'arrow', '←');
-    const next = makeElement('button', 'arrow', '→');
-
-    for (const [button, label] of [[previous, 'Previous'], [next, 'Next']]) {
-      button.type = 'button';
-      button.setAttribute('aria-label', label + ' image in ' + project.title);
-      button.setAttribute('aria-controls', frame.id);
-      button.disabled = images.length < 2;
+      t = t < 0 ? 0 : t > 1 ? 1 : t;
+      const pos = t * (n - 1), i = Math.min(n - 2, Math.floor(pos));
+      const c = (pos - i) > B8[(y & 7) * 8 + (x & 7)] ? stops[i + 1] : stops[i];
+      const p = (y * w + x) * 4;
+      d[p] = c[0]; d[p + 1] = c[1]; d[p + 2] = c[2]; d[p + 3] = 255;
     }
-
-    let currentSlide = 0;
-
-    function showSlide(requestedSlide) {
-      currentSlide = (requestedSlide + images.length) % images.length;
-      slides.forEach((slide, slideIndex) => {
-        slide.hidden = slideIndex !== currentSlide;
-      });
-
-      const caption = images[currentSlide].caption;
-      counter.textContent = (currentSlide + 1) + ' / ' + images.length
-        + (caption ? ' · ' + caption : '');
-    }
-
-    previous.addEventListener('click', () => showSlide(currentSlide - 1));
-    next.addEventListener('click', () => showSlide(currentSlide + 1));
-    showSlide(0);
-
-    arrows.append(previous, next);
-    controls.append(counter, arrows);
-    carousel.append(frame, controls);
-
-    // Add the project heading, description, and optional prototype button.
-    const info = makeElement('div', 'project-info');
-    const heading = makeElement('h3', '', project.title);
-    heading.id = projectId;
-
-    info.append(
-      makeElement('span', 'number', sectionName.toUpperCase() + ' / '
-        + String(index + 1).padStart(2, '0')),
-      heading,
-      makeElement('p', 'tags', project.tag),
-      makeElement('p', '', project.text)
-    );
-
-    if (sectionName === 'work') {
-      const prototypeButton = makeElement('a', 'button', 'View prototype ↗');
-      prototypeButton.href = project.prototype || '#work';
-
-      // Placeholder links stay on this page; real URLs open in a new tab.
-      if (project.prototype && !project.prototype.startsWith('#')) {
-        prototypeButton.target = '_blank';
-        prototypeButton.rel = 'noopener noreferrer';
-      }
-
-      info.append(prototypeButton);
-    }
-
-    article.append(carousel, info);
-    return article;
   }
+  item.ctx.putImageData(item.img, 0, 0);
+}
 
-  // Render all seven galleries.
-  work.forEach((project, index) => {
-    portfolio.querySelector('#work-projects').append(buildProject(project, index, 'work'));
+/* ---------- PROJECT GALLERIES ---------- */
+function buildProject(project, index, sectionName) {
+  const article = el('article', 'project');
+  const pid = sectionName + '-' + index;
+  article.setAttribute('aria-labelledby', pid);
+  article.addEventListener('pointermove', e => {
+    const r = article.getBoundingClientRect();
+    article.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    article.style.setProperty('--my', (e.clientY - r.top) + 'px');
   });
 
-  play.forEach((project, index) => {
-    portfolio.querySelector('#play-projects').append(buildProject(project, index, 'play'));
+  const carousel = el('div', 'carousel');
+  carousel.setAttribute('role', 'region');
+  carousel.setAttribute('aria-roledescription', 'carousel');
+  carousel.setAttribute('aria-label', project.title + ' image carousel');
+  const frame = el('div', 'slide-frame');
+  frame.id = pid + '-slides';
+
+  const images = project.images.length ? project.images
+    : [1, 2, 3].map(n => ({ placeholder: true, caption: 'Image slot ' + n + ' of 3' }));
+
+  const slides = images.map((image, i) => {
+    const slide = el('figure', 'slide');
+    slide.hidden = i !== 0;
+    slide.setAttribute('role', 'group');
+    slide.setAttribute('aria-roledescription', 'slide');
+    slide.setAttribute('aria-label', (i + 1) + ' of ' + images.length);
+    if (image.placeholder) {
+      const canvas = el('canvas', 'dither');
+      canvas.setAttribute('aria-hidden', 'true');
+      const ph = el('div', 'placeholder');
+      const label = el('div', 'chip-label');
+      label.append(el('strong', '', project.title), el('span', '', image.caption + ' · placeholder'));
+      ph.append(label);
+      slide.append(canvas, ph);
+      slide._item = register(canvas, project.tone, i);
+    } else {
+      const img = el('img');
+      img.src = image.src; img.alt = image.alt || project.title; img.loading = 'lazy';
+      slide.append(img);
+    }
+    frame.append(slide);
+    return slide;
   });
 
-  // Replace the portrait placeholder when you provide an image path.
-  if (portrait) {
-    const picture = makeElement('img');
-    picture.src = portrait;
-    picture.alt = portraitAlt;
-    picture.loading = 'lazy';
-    portfolio.querySelector('#portrait-slot').replaceChildren(picture);
+  const controls = el('div', 'controls');
+  const counter = el('span', 'slide-count');
+  counter.setAttribute('aria-live', 'polite');
+  const arrows = el('div', 'arrows');
+  const prev = el('button', 'arrow', '←'), next = el('button', 'arrow', '→');
+  [[prev, 'Previous'], [next, 'Next']].forEach(([b, label]) => {
+    b.type = 'button';
+    b.setAttribute('aria-label', label + ' image in ' + project.title);
+    b.setAttribute('aria-controls', frame.id);
+    b.disabled = images.length < 2;
+  });
+  let cur = 0;
+  function show(n) {
+    cur = (n + images.length) % images.length;
+    slides.forEach((s, i) => { s.hidden = i !== cur; });
+    if (slides[cur]._item) render(slides[cur]._item, 0);
+    const cap = images[cur].caption;
+    counter.textContent = (cur + 1) + ' / ' + images.length + (cap ? ' · ' + cap : '');
   }
+  prev.addEventListener('click', () => show(cur - 1));
+  next.addEventListener('click', () => show(cur + 1));
+  show(0);
+  arrows.append(prev, next);
+  controls.append(counter, arrows);
+  carousel.append(frame, controls);
+
+  const info = el('div', 'project-info');
+  const h = el('h3', '', project.title); h.id = pid;
+  const chips = el('div', 'chips');
+  project.tags.forEach(t => chips.append(el('span', 'chip', t)));
+  info.append(el('span', 'number', sectionName.toUpperCase() + ' / ' + String(index + 1).padStart(2, '0')), h, chips, el('p', 'desc', project.text));
+
+  if (sectionName === 'work') {
+    const hasLink = project.prototype && !project.prototype.startsWith('#');
+    if (hasLink) {
+      const a = el('a', 'button primary', 'View prototype ↗');
+      a.href = project.prototype; a.target = '_blank'; a.rel = 'noopener noreferrer';
+      info.append(a);
+    } else {
+      const b = el('button', 'button', 'Prototype link coming soon');
+      b.type = 'button'; b.disabled = true;
+      info.append(b);
+    }
+  }
+  article.append(carousel, info);
+  return article;
+}
+work.forEach((p, i) => document.getElementById('work-projects').append(buildProject(p, i, 'work')));
+play.forEach((p, i) => document.getElementById('play-projects').append(buildProject(p, i, 'play')));
+
+if (portrait) {
+  const img = el('img'); img.src = portrait; img.alt = portraitAlt; img.loading = 'lazy';
+  document.getElementById('portrait-slot').replaceChildren(img);
+}
+
+/* ---------- MARQUEE ---------- */
+(() => {
+  const words = ['UI/UX Design', 'Figma', 'WCAG 2.1 AA', 'Design Systems', 'Data Visualization', 'Chart.js', 'Svelte', 'TypeScript', 'Interactive Maps', 'Responsive Design', 'Usability Testing'];
+  const track = document.getElementById('marquee');
+  [false, true].forEach(hidden => {
+    const g = el('div', 'marquee-group');
+    if (hidden) g.setAttribute('aria-hidden', 'true');
+    words.forEach(w => g.append(el('span', '', w)));
+    track.append(g);
+  });
 })();
 
+/* ---------- EXPERIENCE TABS ---------- */
+(() => {
+  const list = document.getElementById('tablist'), panel = document.getElementById('xp-panel');
+  const tabs = experience.map((r, i) => {
+    const b = el('button', 'tab');
+    b.type = 'button'; b.id = 'tab-' + i;
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-controls', 'xp-panel');
+    b.append(el('small', '', r.period), el('strong', '', r.title), el('span', '', r.org));
+    b.addEventListener('click', () => select(i, false));
+    b.addEventListener('keydown', e => {
+      const k = e.key; let n = null;
+      if (k === 'ArrowDown' || k === 'ArrowRight') n = (i + 1) % tabs.length;
+      if (k === 'ArrowUp' || k === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+      if (k === 'Home') n = 0;
+      if (k === 'End') n = tabs.length - 1;
+      if (n !== null) { e.preventDefault(); select(n, true); }
+    });
+    list.append(b);
+    return b;
+  });
+  function select(i, focus) {
+    tabs.forEach((t, j) => { t.setAttribute('aria-selected', j === i); t.tabIndex = j === i ? 0 : -1; });
+    const r = experience[i];
+    panel.setAttribute('aria-labelledby', 'tab-' + i);
+    panel.replaceChildren();
+    const ul = el('ul');
+    r.bullets.forEach(t => ul.append(el('li', '', t)));
+    const chips = el('div', 'chips');
+    r.tools.forEach(t => chips.append(el('span', 'chip', t)));
+    panel.append(el('h3', '', r.title), el('p', 'meta', r.org + ' · ' + r.period), ul, chips);
+    if (focus) tabs[i].focus();
+  }
+  select(0, false);
+})();
+
+/* ---------- SKILLS + FILTER ---------- */
+(() => {
+  const grid = document.getElementById('skill-grid'), bar = document.getElementById('filters');
+  const cats = ['All', ...new Set(skills.map(s => s.cat))];
+  const cards = skills.map(s => {
+    const c = el('div', 'skill');
+    c.style.setProperty('--c', catColor[s.cat]);
+    c.append(el('small', '', s.cat), el('strong', '', s.name));
+    grid.append(c);
+    return c;
+  });
+  cats.forEach((cat, i) => {
+    const b = el('button', 'filter', cat);
+    b.type = 'button';
+    b.setAttribute('aria-pressed', i === 0);
+    b.addEventListener('click', () => {
+      bar.querySelectorAll('.filter').forEach(x => x.setAttribute('aria-pressed', x === b));
+      skills.forEach((s, j) => cards[j].classList.toggle('dim', cat !== 'All' && s.cat !== cat));
+    });
+    bar.append(b);
+  });
+})();
+
+/* ---------- CONTRAST CHECKER ---------- */
+(() => {
+  const names = ['ink','blue','teal','mint','sand','gold','orange','rust','red','wine','cream'];
+  const lum = hex => {
+    const [r, g, b] = rgb(hex).map(v => { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); });
+    return .2126 * r + .7152 * g + .0722 * b;
+  };
+  const state = { fg: 'cream', bg: 'blue' };
+  const groups = { fg: document.getElementById('fg'), bg: document.getElementById('bg') };
+  const buttons = { fg: {}, bg: {} };
+  const label = n => n.charAt(0).toUpperCase() + n.slice(1) + ' ' + C[n];
+  ['fg', 'bg'].forEach(kind => names.forEach(n => {
+    const b = el('button', 'sw');
+    b.type = 'button';
+    b.style.background = C[n];
+    b.setAttribute('aria-label', (kind === 'fg' ? 'Text ' : 'Background ') + label(n));
+    b.title = label(n);
+    b.addEventListener('click', () => { state[kind] = n; update(); });
+    groups[kind].append(b);
+    buttons[kind][n] = b;
+  }));
+  function update() {
+    names.forEach(n => { buttons.fg[n].setAttribute('aria-pressed', state.fg === n); buttons.bg[n].setAttribute('aria-pressed', state.bg === n); });
+    const a = lum(C[state.fg]), b = lum(C[state.bg]);
+    const ratio = (Math.max(a, b) + .05) / (Math.min(a, b) + .05);
+    const pv = document.getElementById('preview');
+    pv.style.background = C[state.bg]; pv.style.color = C[state.fg];
+    document.getElementById('ratio').textContent = ratio.toFixed(2) + ' : 1 contrast ratio';
+    const res = document.getElementById('results'); res.replaceChildren();
+    [['Normal text AA', 4.5], ['Large text AA', 3], ['UI components AA', 3], ['Normal text AAA', 7]].forEach(([t, min]) => {
+      const ok = ratio >= min;
+      res.append(el('span', 'badge ' + (ok ? 'pass' : 'fail'), t + ' — ' + (ok ? 'Pass' : 'Fail')));
+    });
+  }
+  update();
+})();
+
+/* ---------- DITHER CANVASES: register static + live ones ---------- */
+document.querySelectorAll('canvas.dither[data-preset]').forEach(c => register(c, c.dataset.preset));
+
+items.forEach(item => {
+  if (item.o.live) {
+    const host = item.canvas.parentElement;
+    host.addEventListener('pointermove', e => {
+      const r = host.getBoundingClientRect();
+      item.m.tx = (e.clientX - r.left) / r.width; item.m.ty = (e.clientY - r.top) / r.height; item.m.gt = 1;
+    });
+    host.addEventListener('pointerleave', () => { item.m.tx = .78; item.m.ty = .4; item.m.gt = .5; });
+    new IntersectionObserver(es => { item.visible = es[0].isIntersecting; }, { rootMargin: '100px' }).observe(host);
+  }
+});
+
+function renderAll(time) { items.forEach(it => { if (it.canvas.offsetParent !== null || it.canvas.getClientRects().length) render(it, time || 0); }); }
+renderAll(0);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => renderAll(0));
+
+let resizeT;
+window.addEventListener('resize', () => { clearTimeout(resizeT); resizeT = setTimeout(() => renderAll(0), 120); });
+
+if (!reduced) {
+  let last = 0;
+  const live = items.filter(i => i.o.live);
+  (function tick(now) {
+    requestAnimationFrame(tick);
+    if (now - last < 40) return;
+    last = now;
+    live.forEach(it => {
+      if (!it.visible) return;
+      const m = it.m;
+      if (m.gt === undefined) m.gt = .5;
+      m.x += (m.tx - m.x) * .08; m.y += (m.ty - m.y) * .08; m.g += (m.gt - m.g) * .08;
+      render(it, now / 1000);
+    });
+  })(0);
+}
+
+/* ---------- SCROLL: progress bar, scroll-spy, reveal, count-up ---------- */
+(() => {
+  const bar = document.getElementById('progress');
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(() => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = 'scaleX(' + (max > 0 ? scrollY / max : 0) + ')';
+      ticking = false;
+    });
+  }, { passive: true });
+
+  const links = [...document.querySelectorAll('nav a')];
+  const spy = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (e.isIntersecting) links.forEach(a => a.toggleAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id));
+      links.forEach(a => { if (a.getAttribute('aria-current') !== null) a.setAttribute('aria-current', 'true'); });
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  links.forEach(a => { const s = document.querySelector(a.getAttribute('href')); if (s) spy.observe(s); });
+
+  const rev = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rev.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(r => rev.observe(r));
+
+  document.querySelectorAll('[data-count]').forEach(n => {
+    const target = +n.dataset.count;
+    if (reduced) return;
+    n.textContent = '0';
+    const t0 = performance.now() + 300;
+    (function step(now) {
+      const p = Math.min(1, Math.max(0, (now - t0) / 1100));
+      n.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(step);
+    })(performance.now());
+  });
+})();
 </script>
-<noscript>Please enable JavaScript to view the galleries.</noscript>
 </body>
 </html>
